@@ -1,65 +1,56 @@
+/* Arxa plan */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: linear-gradient(to bottom, #64b5f6 0%, #1976d2 100%);
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%);
   color: white;
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
 }
 
-/* Spinner */
-#loading-spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
-  border-radius: 50%;
+/* Spinner (yüklenme işarəsi) */
+.spinner {
+  margin: 100px auto;
   width: 50px;
   height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid white;
+  border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
-/* Gizlənəcək */
-.hidden {
-  display: none;
-}
-
 @keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* Profil məlumatları qutusu */
+/* Profil qutusu */
 .profile-box {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  color: white;
-  font-size: 18px;
+  background: rgba(33, 150, 243, 0.3); /* Şəffaf göy */
+  border: 1px solid #90caf9;           /* Açıq sərhəd */
+  border-radius: 15px;
+  padding: 15px 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-size: 16px;
+  backdrop-filter: blur(8px);
 }
 
-/* Desktop bloklama */
-#desktop-block {
-  display: none;
-  padding: 20px;
-  background-color: #000;
-  color: red;
-}
-
+/* Telefon görünüşü üçün */
 @media screen and (min-width: 768px) {
-  #app {
-    display: none !important;
-  }
-
-  #desktop-block {
+  body::before {
+    content: "Bu sayt yalnız mobil cihazlar üçün nəzərdə tutulub.";
     display: block;
+    padding: 50px;
+    font-size: 20px;
+    background: #ff5252;
+    color: white;
   }
 
-  #loading-spinner {
+  .profile-box,
+  .spinner {
     display: none;
   }
 }
