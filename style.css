@@ -14,7 +14,7 @@ body {
 .profile-box {
   display: flex;
   align-items: center;
-  background-color: #3a87ad; /* əvvəlki mavi */
+  background-color: #3a87ad; /* sənin əvvəlki göy */
   padding: 8px 12px;
   border-radius: 6px;
   color: white;
@@ -47,7 +47,7 @@ body {
 }
 
 .balance-box {
-  background-color: #3a87ad; /* əvvəlki mavi */
+  background-color: #3a87ad;
   color: white;
   padding: 10px 15px;
   border-radius: 6px;
@@ -83,9 +83,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Yeni ads-box, mavi və əvvəlkilərin dizaynına uyğun */
+/* Yeni ads-box, amma rəngi sadəcə köhnə göy ilə fərqlənir */
 .ads-box {
-  background-color: #007bff; /* mavi */
+  background-color: #3a87ad; /* eynən profil və balans qutuları kimi */
   border-radius: 6px;
   width: 180px;
   margin: 0 auto;
@@ -128,7 +128,7 @@ body {
 }
 
 .ads-watch-btn {
-  background-color: #0056b3;
+  background-color: #2b6cb0; /* bir az daha açıq göy */
   border: none;
   color: white;
   padding: 8px 12px;
@@ -141,10 +141,11 @@ body {
 }
 
 .ads-watch-btn:hover:not(:disabled) {
-  background-color: #003d80;
+  background-color: #1e4e8c;
 }
 
 .ads-watch-btn:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
+
