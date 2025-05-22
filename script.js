@@ -1,16 +1,19 @@
+// Reklam izləmə üçün dəyişənlər
 const totalAds = 20;
 let watchedAds = 0;
-let currentCoins = parseInt(localStorage.getItem('ads_coins')) || 0;
 
 const progressBar = document.getElementById('adsProgressBar');
 const watchBtn = document.getElementById('adsWatchBtn');
 const balanceCoins = document.getElementById('balanceCoins');
 
-// Başlanğıc balansı göstər
+// LocalStorage-dan balansı oxu
+let currentCoins = parseInt(localStorage.getItem('adsCoins')) || 0;
 balanceCoins.textContent = currentCoins + ' ADS COIN';
 
-// Telegram məlumatı
+// Telegram WebApp hazır olduqda işə düşür
 window.Telegram.WebApp.ready();
+
+// Telegram istifadəçi məlumatlarını əldə edirik
 const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
 
 if (user) {
@@ -21,33 +24,43 @@ if (user) {
   document.getElementById('telegramUsername').textContent = "";
 }
 
-// Reklam düyməsinə klik olanda
+// Reklam SDK-nı başladın (Spot ID: 6075969)
+window.initCdTma?.({ id: 6075969 })
+  .then(show => {
+    window.showAd = show;
+  })
+  .catch(e => console.error("Reklam SDK xətası:", e));
+
+// Reklam düyməsinə klik hadisəsi
 watchBtn.addEventListener('click', () => {
-  if (watchedAds >= totalAds) {
-    alert('Qazancınız balansınıza əlavə edildi!');
-
-    currentCoins += 20;
-    balanceCoins.textContent = currentCoins + ' ADS COIN';
-    localStorage.setItem('ads_coins', currentCoins);
-
-    watchedAds = 0;
-    progressBar.style.width = '0%';
-    watchBtn.textContent = 'REKLAMI İZLƏ';
-    watchBtn.disabled = false;
+  if (!window.showAd) {
+    alert("Reklam hazır deyil. Birazdan yenidən cəhd edin.");
     return;
   }
 
-  // Reklamı göstər
-  window.onclick_6075969(); // Spot ID reklamı göstərir
+  window.showAd()
+    .then(() => {
+      watchedAds++;
 
-  // Reklamdan sonra 5 saniyə gözləyib irəlilə
-  setTimeout(() => {
-    watchedAds++;
-    const progressPercent = (watchedAds / totalAds) * 100;
-    progressBar.style.width = progressPercent + '%';
+      const progressPercent = (watchedAds / totalAds) * 100;
+      progressBar.style.width = progressPercent + '%';
 
-    if (watchedAds >= totalAds) {
-      watchBtn.textContent = 'QAZANCI AL';
-    }
-  }, 5000); // Reklam bitmə vaxtına uyğun dəyişə bilər
+      if (watchedAds >= totalAds) {
+        currentCoins += 20; // 20 coin əlavə et
+        balanceCoins.textContent = currentCoins + ' ADS COIN';
+        localStorage.setItem('adsCoins', currentCoins); // yadda saxla
+
+        alert("20 ADS COIN qazandınız!");
+
+        watchedAds = 0;
+        progressBar.style.width = '0%';
+        watchBtn.textContent = 'REKLAMI İZLƏ';
+      } else {
+        watchBtn.textContent = 'REKLAMI DAVAM ET';
+      }
+    })
+    .catch((e) => {
+      console.error("Reklam göstərilə bilmədi:", e);
+      alert("Reklam yüklənmədi. Birazdan yenidən cəhd edin.");
+    });
 });
