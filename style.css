@@ -1,8 +1,7 @@
-/* Arxa plan canlı gradient */
 body {
-  margin: 0; padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #87CEFA 0%, #87CEFA 50%, #1E90FF 50%, #1E90FF 100%);
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, #64b5f6 0%, #1976d2 100%);
   color: white;
   text-align: center;
   height: 100vh;
@@ -10,62 +9,57 @@ body {
 }
 
 /* Spinner */
-.spinner {
-  position: fixed;
-  top: 50%; left: 50%;
+#loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px; height: 50px;
-  border: 6px solid rgba(255, 255, 255, 0.3);
-  border-top: 6px solid white;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
   border-radius: 50%;
+  width: 50px;
+  height: 50px;
   animation: spin 1s linear infinite;
-  z-index: 1000;
 }
 
-/* Spinner animasiyası */
+/* Gizlənəcək */
+.hidden {
+  display: none;
+}
+
 @keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg);}
-  100% { transform: translate(-50%, -50%) rotate(360deg);}
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Yoxlandıqdan sonra göstərilən hissə */
-#welcome {
-  font-size: 2rem;
-  margin-top: 10px;
-}
-
-/* Profil qutusu */
+/* Profil məlumatları qutusu */
 .profile-box {
-  background: rgba(0, 0, 128, 0.5);
-  display: inline-block;
-  padding: 15px 30px;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,128,0.7);
-  text-align: center;
-}
-
-/* Profil şəkli */
-.profile-pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  border: 2px solid white;
-  margin-bottom: 10px;
-  object-fit: cover;
-}
-
-/* Username */
-.username {
-  font-size: 1.2rem;
-  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
   color: white;
+  font-size: 18px;
 }
 
-/* Xoş gəldin yazısı */
-.welcome {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-top: 30px;
-  text-shadow: 0 0 6px rgba(255,255,255,0.8);
+/* Desktop bloklama */
+#desktop-block {
+  display: none;
+  padding: 20px;
+  background-color: #000;
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  #app {
+    display: none !important;
+  }
+
+  #desktop-block {
+    display: block;
+  }
+
+  #loading-spinner {
+    display: none;
+  }
 }
