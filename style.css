@@ -11,14 +11,49 @@ body {
   padding-top: 20px;
 }
 
-.profile-balance-box {
-  background-color: #3a87ad; /* profil qutusu ilə eyni rəng */
+.profile-box {
+  display: flex;
+  align-items: center;
+  background-color: #3a87ad; /* əvvəlki mavi */
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  width: 180px;
+  margin: 10px auto 5px auto;
+  font-family: Arial, sans-serif;
+}
+
+.profile-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-username {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.balance-box {
+  background-color: #3a87ad; /* əvvəlki mavi */
   color: white;
   padding: 10px 15px;
   border-radius: 6px;
   text-align: center;
   width: 180px;
-  margin: 10px auto 5px auto;
+  margin: 5px auto 10px auto;
   font-family: Arial, sans-serif;
 }
 
@@ -48,6 +83,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Yeni ads-box, mavi və əvvəlkilərin dizaynına uyğun */
 .ads-box {
   background-color: #007bff; /* mavi */
   border-radius: 6px;
