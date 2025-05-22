@@ -1,19 +1,39 @@
-// Reklam izləmə üçün dəyişənlər
 const totalAds = 20;
-let watchedAds = 0;
-
 const progressBar = document.getElementById('adsProgressBar');
 const watchBtn = document.getElementById('adsWatchBtn');
 const balanceCoins = document.getElementById('balanceCoins');
 
-// LocalStorage-dan balansı oxu
+// LocalStorage-dan balans və tarixə görə reklam baxışlarını oxu
 let currentCoins = parseInt(localStorage.getItem('adsCoins')) || 0;
+let savedDate = localStorage.getItem('adsDate');
+let today = new Date().toLocaleDateString(); // günlük
+
+let watchedAds = 0;
+
+if (savedDate === today) {
+  watchedAds = parseInt(localStorage.getItem('watchedAds')) || 0;
+} else {
+  // Yeni gün başlayıbsa sıfırla
+  localStorage.setItem('adsDate', today);
+  localStorage.setItem('watchedAds', '0');
+  watchedAds = 0;
+}
+
+// Balansı göstər
 balanceCoins.textContent = currentCoins + ' ADS COIN';
 
-// Telegram WebApp hazır olduqda işə düşür
+// Proqress bar vəziyyətini yüklə
+progressBar.style.width = (watchedAds / totalAds * 100) + '%';
+
+if (watchedAds >= totalAds) {
+  watchBtn.textContent = 'Limitə çatdınız';
+  watchBtn.disabled = true;
+}
+
+// Telegram WebApp
 window.Telegram.WebApp.ready();
 
-// Telegram istifadəçi məlumatlarını əldə edirik
+// Telegram istifadəçi məlumatı
 const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
 
 if (user) {
@@ -24,42 +44,46 @@ if (user) {
   document.getElementById('telegramUsername').textContent = "";
 }
 
-// Reklam SDK-nı başladın (Spot ID: 6075969)
+// Reklam SDK (OnClicka Spot ID: 6075969)
 window.initCdTma?.({ id: 6075969 })
   .then(show => {
     window.showAd = show;
   })
   .catch(e => console.error("Reklam SDK xətası:", e));
 
-// Reklam düyməsinə klik hadisəsi
+// REKLAMI İZLƏ düyməsi
 watchBtn.addEventListener('click', () => {
   if (!window.showAd) {
     alert("Reklam hazır deyil. Birazdan yenidən cəhd edin.");
     return;
   }
 
+  if (watchedAds >= totalAds) {
+    alert("Bu gün üçün reklam limitinə çatmısınız.");
+    return;
+  }
+
   window.showAd()
     .then(() => {
       watchedAds++;
-
-      const progressPercent = (watchedAds / totalAds) * 100;
-      progressBar.style.width = progressPercent + '%';
+      localStorage.setItem('watchedAds', watchedAds.toString());
+      progressBar.style.width = (watchedAds / totalAds * 100) + '%';
 
       if (watchedAds >= totalAds) {
-        currentCoins += 20; // 20 coin əlavə et
+        // Günlük limitə çatdı
+        currentCoins += 20;
+        localStorage.setItem('adsCoins', currentCoins);
         balanceCoins.textContent = currentCoins + ' ADS COIN';
-        localStorage.setItem('adsCoins', currentCoins); // yadda saxla
+
+        watchBtn.textContent = 'Limitə çatdınız';
+        watchBtn.disabled = true;
 
         alert("20 ADS COIN qazandınız!");
-
-        watchedAds = 0;
-        progressBar.style.width = '0%';
-        watchBtn.textContent = 'REKLAMI İZLƏ';
       } else {
         watchBtn.textContent = 'REKLAMI DAVAM ET';
       }
     })
-    .catch((e) => {
+    .catch(e => {
       console.error("Reklam göstərilə bilmədi:", e);
       alert("Reklam yüklənmədi. Birazdan yenidən cəhd edin.");
     });
