@@ -12,8 +12,11 @@ body {
 }
 
 /* Profil və balans qutularının ümumi tərzi */
-.profile-box, .balance-box {
-  background: rgba(0, 123, 255, 0.15); /* Göy rəng, şəffaflıqla */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 123, 255, 0.15);
   border-radius: 10px;
   padding: 8px 12px;
   margin: 5px auto;
@@ -24,14 +27,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Profil qutusunun içi */
-.profile-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Profil şəkli */
 .profile-pic {
   width: 40px;
   height: 40px;
@@ -40,7 +35,6 @@ body {
   border: 2px solid #007bff;
 }
 
-/* Profil məlumatları */
 .profile-info {
   display: flex;
   flex-direction: column;
@@ -56,6 +50,7 @@ body {
   font-size: 12px;
   color: #003366aa;
 }
+
 
 /* Balans qutusu tərzi */
 .balance-box {
