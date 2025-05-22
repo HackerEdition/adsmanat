@@ -1,5 +1,4 @@
-<script>
-  // Reklam izləmə üçün dəyişənlər
+// Reklam izləmə üçün dəyişənlər
   const totalAds = 20;
   let watchedAds = 0;
 
@@ -54,4 +53,4 @@
     document.getElementById('telegramName').textContent = "İstifadəçi";
     document.getElementById('telegramUsername').textContent = "";
   }
-</script>
+
