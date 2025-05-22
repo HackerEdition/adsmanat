@@ -3,10 +3,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #cfcfcf 0%, #cfcfcf 50%, #000000 50%, #000000 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(200, 200, 200, 0.5) 0%,    /* Üst – şəffaf boz */
+    rgba(180, 180, 180, 0.3) 30%,   /* Ortaya doğru açıq boz */
+    rgba(50, 50, 50, 0.5) 60%,      /* Tədricən qaralma */
+    rgba(0, 0, 0, 0.8) 100%         /* Alt – tünd qara */
+  );
   height: 100vh;
   overflow: hidden;
 }
+
 
 /* Spinner */
 .spinner {
