@@ -79,17 +79,6 @@ body {
 
 
 
-/* --- Yeni "Pul Qazan" qutusu --- */
-
-.earn-money-text {
-  color: white;
-  font-weight: 700;
-  font-size: 16px;
-  margin: 20px 0 10px 0;
-  text-align: center;
-  letter-spacing: 1.5px;
-}
-
 /* Yeni ads qutusu dizaynı (mavi, şəffaf, eyni ölçüdə) */
 .ads-box {
   background: rgba(0, 123, 255, 0.15);
