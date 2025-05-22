@@ -1,82 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ADSManat</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #aee1ff 0%, #007BFF 100%);
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #spinner {
-      border: 6px solid #f3f3f3;
-      border-top: 6px solid #007BFF;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-      position: absolute;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    #userBox {
-      display: none;
-      background-color: #007BFF;
-      color: white;
-      padding: 20px;
-      border-radius: 16px;
-      text-align: center;
-      width: 280px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    #userPhoto {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      border: 2px solid white;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ADSMANAT</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="spinner"></div>
+  <div id="spinner" class="spinner"></div>
 
-  <div id="userBox">
-    <img id="userPhoto" src="" alt="Profile Photo">
-    <h2 id="username">@username</h2>
+  <div id="app" style="display:none;">
+    <div class="welcome">Xoş gəldin</div>
+    <div class="profile-box">
+      <img src="https://t.me/i/userpic/320/username.jpg" alt="Profil" class="profile-pic" />
+      <div class="username">@username</div>
+    </div>
+    <!-- Burada əsas məzmun -->
   </div>
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script>
-    window.onload = function () {
-      const tg = window.Telegram.WebApp;
-      tg.expand();
-
-      const user = tg.initDataUnsafe.user;
-
-      if (user) {
-        document.getElementById("username").innerText = "@" + (user.username || user.first_name);
-        document.getElementById("userPhoto").src = `https://t.me/i/userpic/320/${user.username}.jpg`;
-      }
-
-      setTimeout(() => {
-        document.getElementById("spinner").style.display = "none";
-        document.getElementById("userBox").style.display = "block";
-      }, 1500);
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
