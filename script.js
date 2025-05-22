@@ -1,18 +1,16 @@
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const tg = window.Telegram.WebApp;
   const user = tg.initDataUnsafe.user;
 
-  // Spinner göstərilir
-  setTimeout(() => {
-    document.getElementById("loading-spinner").style.display = "none";
-    document.getElementById("app").classList.remove("hidden");
+  if (user) {
+    document.getElementById("tg-name").textContent = user.first_name + (user.last_name ? " " + user.last_name : "");
+    document.getElementById("tg-username").textContent = user.username ? "@" + user.username : "@username yoxdur";
+    document.getElementById("profile-image").src = `https://t.me/i/userpic/320/${user.id}.jpg`;
 
-    if (user) {
-      document.getElementById("firstname").textContent = "Ad: " + user.first_name;
-      document.getElementById("username").textContent = "İstifadəçi: @" + user.username;
-    } else {
-      document.getElementById("firstname").textContent = "Ad: Təyin olunmayıb";
-      document.getElementById("username").textContent = "İstifadəçi: Təyin olunmayıb";
-    }
-  }, 1200); // Spinner 1.2 saniyə görünür
+    // Spinneri gizlət, profili göstər
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("profile-box").style.display = "flex";
+  } else {
+    alert("Telegram istifadəçi məlumatı tapılmadı.");
+  }
 });
