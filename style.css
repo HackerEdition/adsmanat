@@ -11,141 +11,159 @@ body {
   padding-top: 20px;
 }
 
-.profile-box {
-  display: flex;
-  align-items: center;
-  background-color: #3a87ad; /* sənin əvvəlki göy */
+/* Profil və balans qutularının ümumi tərzi */
+.profile-box, .balance-box {
+  background: rgba(0, 123, 255, 0.15); /* Göy rəng, şəffaflıqla */
+  border-radius: 10px;
   padding: 8px 12px;
-  border-radius: 6px;
-  color: white;
-  width: 180px;
-  margin: 10px auto 5px auto;
+  margin: 5px auto;
+  width: 90%;
+  max-width: 320px;
+  color: #004a99;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   font-family: Arial, sans-serif;
 }
 
-.profile-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-  object-fit: cover;
+/* Profil qutusunun içi */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+/* Profil şəkli */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+
+/* Profil məlumatları */
 .profile-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .profile-name {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .profile-username {
   font-size: 12px;
-  opacity: 0.8;
+  color: #003366aa;
 }
 
+/* Balans qutusu tərzi */
 .balance-box {
-  background-color: #3a87ad;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
   text-align: center;
-  width: 180px;
-  margin: 5px auto 10px auto;
-  font-family: Arial, sans-serif;
+  margin-top: 16px;
 }
 
 .balance-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.balance-coins {
+.balance-amount {
   font-size: 16px;
   font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .balance-azn {
-  font-size: 12px;
-  opacity: 0.7;
-  margin-top: 3px;
+  font-size: 14px;
+  color: #0066cc;
+  font-weight: 500;
 }
+
+
+/* --- Yeni "Pul Qazan" qutusu --- */
 
 .earn-money-text {
-  text-align: center;
   color: white;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 20px 0 10px 0;
+  text-align: center;
+  letter-spacing: 1.5px;
 }
 
-/* Yeni ads-box, amma rəngi sadəcə köhnə göy ilə fərqlənir */
+/* Yeni ads qutusu dizaynı (mavi, şəffaf, eyni ölçüdə) */
 .ads-box {
-  background-color: #3a87ad; /* eynən profil və balans qutuları kimi */
-  border-radius: 6px;
-  width: 180px;
-  margin: 0 auto;
-  padding: 10px 15px;
-  text-align: center;
-  color: white;
+  background: rgba(0, 123, 255, 0.15);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 320px;
+  padding: 12px 15px;
+  margin: 0 auto 20px auto;
+  color: #004a99;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 .ads-info {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .ads-count {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .ads-earn {
-  font-size: 12px;
-  opacity: 0.8;
-  margin-top: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 6px;
 }
 
+/* Progress bar arxa planı */
 .ads-progress-bar-bg {
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  height: 12px;
+  height: 14px;
   width: 100%;
-  margin: 8px 0;
   overflow: hidden;
+  margin: 12px 0;
 }
 
+/* Progress bar dolması */
 .ads-progress-bar-fill {
-  background-color: #28a745;
+  background-color: #007bff;
   height: 100%;
   width: 0%;
   border-radius: 10px;
   transition: width 0.3s ease;
 }
 
+/* Reklam izləmə düyməsi */
 .ads-watch-btn {
-  background-color: #2b6cb0; /* bir az daha açıq göy */
+  background-color: #007bff;
   border: none;
   color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-weight: 700;
   cursor: pointer;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   transition: background-color 0.3s ease;
+  user-select: none;
 }
 
 .ads-watch-btn:hover:not(:disabled) {
-  background-color: #1e4e8c;
+  background-color: #0056b3;
 }
 
 .ads-watch-btn:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
-
