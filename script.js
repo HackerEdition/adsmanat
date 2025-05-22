@@ -6,24 +6,20 @@ const progressBar = document.getElementById('adsProgressBar');
 const watchBtn = document.getElementById('adsWatchBtn');
 const balanceCoins = document.getElementById('balanceCoins');
 
-// Reklam mühərrikini işə salırıq
-window.initCdTma?.({ id: 6075969 })
-  .then(show => window.show = show)
-  .catch(e => console.error("Reklam init xətası:", e));
+// LocalStorage-dan balansı yüklə
+let currentCoins = parseInt(localStorage.getItem('ads_coins')) || 0;
+balanceCoins.textContent = currentCoins + ' ADS COIN';
 
 watchBtn.addEventListener('click', () => {
-  if (!window.show) {
-    alert("Reklam hazır deyil. Zəhmət olmasa bir azdan yenidən yoxlayın.");
-    return;
-  }
-
   if (watchedAds >= totalAds) {
     alert('Qazancınız balansınıza əlavə edildi!');
 
-    // Balansı artır (20 coin əlavə et)
-    let currentCoins = parseInt(balanceCoins.textContent) || 0;
+    // Balansı artır (20 coins əlavə et)
     currentCoins += 20;
     balanceCoins.textContent = currentCoins + ' ADS COIN';
+
+    // Balansı localStorage-da yadda saxla
+    localStorage.setItem('ads_coins', currentCoins);
 
     watchedAds = 0;
     progressBar.style.width = '0%';
@@ -34,22 +30,14 @@ watchBtn.addEventListener('click', () => {
     return;
   }
 
-  // Reklamı göstər
-  window.show()
-    .then(() => {
-      // Reklam uğurla izlənibsə
-      watchedAds++;
-      const progressPercent = (watchedAds / totalAds) * 100;
-      progressBar.style.width = progressPercent + '%';
+  // Reklam izləmə simulyasiyası
+  watchedAds++;
+  const progressPercent = (watchedAds / totalAds) * 100;
+  progressBar.style.width = progressPercent + '%';
 
-      if (watchedAds >= totalAds) {
-        watchBtn.textContent = 'QAZANCI AL';
-      }
-    })
-    .catch((e) => {
-      console.error("Reklam göstərilə bilmədi:", e);
-      alert("Reklam göstərilə bilmədi. Zəhmət olmasa sonra yenidən cəhd edin.");
-    });
+  if (watchedAds >= totalAds) {
+    watchBtn.textContent = 'QAZANCI AL';
+  }
 });
 
 // Telegram WebApp hazır olduqda işə düşür
@@ -59,7 +47,7 @@ window.Telegram.WebApp.ready();
 const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
 
 if (user) {
-  // Əgər istifadəçi məlumatı varsa, ad və username göstər
+  // İstifadəçi məlumatı varsa, ad və username göstər
   document.getElementById('telegramName').textContent = user.first_name || "İstifadəçi";
   if (user.username) {
     document.getElementById('telegramUsername').textContent = "@" + user.username;
