@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADC Manat</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div id="desktop-block">
-    <p>Bu sayt yalnız mobil cihazlar üçün hazırlanıb.</p>
-  </div>
+  <!-- Spinner (ilk yüklənmə üçün) -->
+  <div id="loader" class="spinner"></div>
 
-  <div id="loading-spinner"></div>
-
-  <div id="app" class="hidden">
-    <div class="profile-box">
-      <p id="firstname">Ad: ...</p>
-      <p id="username">İstifadəçi: ...</p>
-      <h2>Xoş Gəldin!</h2>
+  <!-- Profil qutusu -->
+  <div class="profile-box" id="profile-box" style="display: none;">
+    <img src="" alt="Profil" class="profile-image" id="profile-image">
+    <div class="profile-info">
+      <div class="name" id="tg-name">Ad Yüklənir...</div>
+      <div class="username" id="tg-username">@username</div>
     </div>
-    <!-- Bura digər kontentin yerləşəcəyi hissədir -->
   </div>
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
