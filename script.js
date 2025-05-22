@@ -30,7 +30,7 @@ if (watchedAds >= totalAds) {
   watchBtn.disabled = true;
 }
 
-// Telegram WebApp
+// Telegram WebApp hazırdır
 window.Telegram.WebApp.ready();
 
 // Telegram istifadəçi məlumatı
@@ -66,19 +66,39 @@ watchBtn.addEventListener('click', () => {
   window.showAd()
     .then(() => {
       watchedAds++;
+      currentCoins++; // hər reklam izləməyə 1 coin əlavə edilir (istəyə görə dəyişdirə bilərsən)
+
       localStorage.setItem('watchedAds', watchedAds.toString());
+      localStorage.setItem('adsCoins', currentCoins.toString());
+
       progressBar.style.width = (watchedAds / totalAds * 100) + '%';
+      balanceCoins.textContent = currentCoins + ' ADS COIN';
+
+      // Backend-ə reklam izləmə məlumatlarını göndər
+      fetch('update_user.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          id: user?.id || '',
+          username: user?.username || '',
+          ad_views: watchedAds.toString(),
+          coin_balance: currentCoins.toString()
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success) {
+          console.error('Backend update failed:', data.error);
+        }
+      })
+      .catch(err => {
+        console.error('Fetch error:', err);
+      });
 
       if (watchedAds >= totalAds) {
-        // Günlük limitə çatdı
-        currentCoins += 20;
-        localStorage.setItem('adsCoins', currentCoins);
-        balanceCoins.textContent = currentCoins + ' ADS COIN';
-
         watchBtn.textContent = 'Limitə çatdınız';
         watchBtn.disabled = true;
-
-        alert("20 ADS COIN qazandınız!");
+        alert("Gündəlik limitə çatdınız! " + currentCoins + " ADS COIN qazandınız!");
       } else {
         watchBtn.textContent = 'REKLAMI DAVAM ET';
       }
