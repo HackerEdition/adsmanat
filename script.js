@@ -16,8 +16,8 @@ if (user) {
   document.getElementById('telegramName').textContent = user.first_name || "İstifadəçi";
   document.getElementById('telegramUsername').textContent = user.username ? "@" + user.username : "";
 
-  // Python Flask serverindən istifadəçi məlumatlarını yüklə
-  fetch('http://localhost:5000/get_user_data?id=' + userId)  // buradakı localhost-u server ünvanı ilə dəyiş
+  // Python backend serverdən istifadəçi məlumatlarını yüklə
+  fetch('https://adsmanat.onrender.com/get_user_data?id=' + userId)
     .then(res => res.json())
     .then(data => {
       watchedAds = data.ad_views || 0;
@@ -32,6 +32,9 @@ if (user) {
         watchBtn.textContent = 'Limitə çatdınız';
         watchBtn.disabled = true;
       }
+    })
+    .catch(e => {
+      console.error("İstifadəçi məlumatı yüklənərkən xəta:", e);
     });
 }
 
@@ -52,37 +55,31 @@ watchBtn.addEventListener('click', () => {
       watchedAds++;
       let earned = 0;
 
-      if (watchedAds >= totalAds) {
-        earned = 20;
-        currentCoins += earned;
-
-        watchBtn.textContent = 'Limitə çatdınız';
-        watchBtn.disabled = true;
-      }
+      // Hər izləmədə 1 coin qazandırmaq istəyirsənsə, buranı dəyişə bilərsən
+      earned = 1;
+      currentCoins += earned;
 
       progressBar.style.width = (watchedAds / totalAds * 100) + '%';
       balanceCoins.textContent = currentCoins + ' ADS COIN';
       document.querySelector('.balance-azn').textContent = (currentCoins / 10000).toFixed(2) + ' AZN';
 
-      // Python Flask serverinə məlumat göndər (username da əlavə olunur)
-      fetch('http://localhost:5000/update_user_data', {  // buradakı localhost-u server ünvanı ilə dəyiş
+      // PHP yerinə Python backend-ə məlumat göndər
+      fetch('https://adsmanat.onrender.com/update_user_data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           id: userId,
-          username: user.username || '',
           ad_views: watchedAds,
           coin_balance: currentCoins
         })
-      })
-      .then(res => res.json())
-      .then(resData => {
-        if (earned > 0) {
-          alert("20 ADS COIN qazandınız!");
-        } else {
-          watchBtn.textContent = 'REKLAMI DAVAM ET';
-        }
-      })
-      .catch(() => alert("Serverə məlumat göndərərkən xəta baş verdi."));
+      }).catch(e => console.error("Məlumat göndərilərkən xəta:", e));
+
+      if (watchedAds >= totalAds) {
+        watchBtn.textContent = 'Limitə çatdınız';
+        watchBtn.disabled = true;
+        alert(earned + " ADS COIN qazandınız!");
+      } else {
+        watchBtn.textContent = 'REKLAMI DAVAM ET';
+      }
     });
 });
