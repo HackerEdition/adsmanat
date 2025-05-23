@@ -16,8 +16,8 @@ if (user) {
   document.getElementById('telegramName').textContent = user.first_name || "İstifadəçi";
   document.getElementById('telegramUsername').textContent = user.username ? "@" + user.username : "";
 
-  // PHP ilə serverdən istifadəçi məlumatlarını yüklə
-  fetch('get_user_data.php?id=' + userId)
+  // Python Flask serverindən istifadəçi məlumatlarını yüklə
+  fetch('http://localhost:5000/get_user_data?id=' + userId)  // buradakı localhost-u server ünvanı ilə dəyiş
     .then(res => res.json())
     .then(data => {
       watchedAds = data.ad_views || 0;
@@ -64,21 +64,25 @@ watchBtn.addEventListener('click', () => {
       balanceCoins.textContent = currentCoins + ' ADS COIN';
       document.querySelector('.balance-azn').textContent = (currentCoins / 10000).toFixed(2) + ' AZN';
 
-      // PHP-ə məlumat göndər
-      fetch('update_user_data.php', {
+      // Python Flask serverinə məlumat göndər (username da əlavə olunur)
+      fetch('http://localhost:5000/update_user_data', {  // buradakı localhost-u server ünvanı ilə dəyiş
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           id: userId,
+          username: user.username || '',
           ad_views: watchedAds,
           coin_balance: currentCoins
         })
-      });
-
-      if (earned > 0) {
-        alert("20 ADS COIN qazandınız!");
-      } else {
-        watchBtn.textContent = 'REKLAMI DAVAM ET';
-      }
+      })
+      .then(res => res.json())
+      .then(resData => {
+        if (earned > 0) {
+          alert("20 ADS COIN qazandınız!");
+        } else {
+          watchBtn.textContent = 'REKLAMI DAVAM ET';
+        }
+      })
+      .catch(() => alert("Serverə məlumat göndərərkən xəta baş verdi."));
     });
 });
