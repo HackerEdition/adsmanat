@@ -1,17 +1,30 @@
 <?php
-$conn = new mysqli("sql8.freesqldatabase.com", "sql8780594", "s3Alaib8pR", "sql8780594");
-if ($conn->connect_error) die("Bağlantı xətası");
+header('Content-Type: application/json');
 
-$id = intval($_GET['id'] ?? 0);
+$host = 'sql8.freesqldatabase.com';
+$db = 'sql8780594';
+$user = 'sql8780594';
+$pass = 's3Alaib8pR';
 
-// İstifadəçi mövcud deyilsə, əlavə et
-$conn->query("INSERT IGNORE INTO users (id, ad_views, coin_balance) VALUES ($id, 0, 0)");
+$conn = new mysqli($host, $user, $pass, $db, 3306);
+
+if ($conn->connect_error) {
+    echo json_encode(['error' => 'MySQL bağlantı xətası: ' . $conn->connect_error]);
+    exit();
+}
+
+$id = intval($_GET['id']);
+$username = $conn->real_escape_string($_GET['username'] ?? '');
 
 $result = $conn->query("SELECT ad_views, coin_balance FROM users WHERE id = $id");
 
-if ($result && $row = $result->fetch_assoc()) {
-    echo json_encode($row);
+if ($result->num_rows > 0) {
+    echo json_encode($result->fetch_assoc());
 } else {
-    echo json_encode(["ad_views" => 0, "coin_balance" => 0]);
+    // Yeni istifadəçini əlavə et
+    $conn->query("INSERT INTO users (id, username, ad_views, coin_balance, created_at) VALUES ($id, '$username', 0, 0, NOW())");
+    echo json_encode(['ad_views' => 0, 'coin_balance' => 0]);
 }
+
+$conn->close();
 ?>
