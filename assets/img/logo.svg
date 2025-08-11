@@ -1,0 +1,18 @@
+<svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="pink" x1="0" y1="0" x2="220" y2="0">
+      <stop offset="0%" stop-color="#ff2fb9"/>
+      <stop offset="100%" stop-color="#ff6ad5"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="10" width="36" height="20" rx="10" fill="#1a0f18" stroke="#ff2fb9" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="18" cy="20" r="6" fill="url(#pink)" filter="url(#glow)"/>
+  <text x="46" y="26" font-family="Inter, Arial" font-weight="800" font-size="20" fill="url(#pink)" filter="url(#glow)">ADSMANAT</text>
+</svg>

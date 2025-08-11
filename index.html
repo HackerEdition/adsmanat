@@ -2,39 +2,95 @@
 <html lang="az">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADS Manat</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <title>ADSMANAT</title>
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://js.onclckvd.com/in-stream-ad-admanager/tma.js"></script>
 </head>
 <body>
-  <div class="profile-box">
-    <img src="profile.jpg" alt="Profil" class="profile-pic" />
-    <div class="profile-info">
-      <div class="profile-name" id="telegramName">Yüklənir...</div>
-      <div class="profile-username" id="telegramUsername">@username</div>
+  <div id="bubbles"></div>
+
+  <header class="app-header">
+    <div class="left">
+      <img src="/assets/img/logo.svg" alt="ADSMANAT" class="logo" />
     </div>
-  </div>
+    <button id="menuButton" class="icon-button" aria-label="Menu" tabindex="0">
+      <span class="burger"></span>
+      <span class="burger"></span>
+      <span class="burger"></span>
+    </button>
+  </header>
 
-  <div class="balance-box">
-    <div class="balance-title">BALANS</div>
-    <div id="balanceCoins" class="balance-amount">0 ADS COIN</div>
-    <div class="balance-azn">0 AZN</div>
-  </div>
+  <div id="overlay" class="overlay"></div>
 
-  <div class="earn-box">
-    <div class="earn-text">PUL QAZAN</div>
-    <div class="ads-box">
-      <div class="ads-info">20 Reklam izlə</div>
-      <div class="ads-earn">20 ADS COİN qazanın</div>
-      <div class="progress-bar-container">
-        <div id="adsProgressBar" class="progress-bar"></div>
+  <aside id="sideMenu" class="side-menu" aria-hidden="true">
+    <div class="side-menu-header">
+      <img src="/assets/img/logo.svg" alt="ADSMANAT" class="logo small" />
+      <button id="closeMenu" class="icon-button close" aria-label="Bağla">✕</button>
+    </div>
+    <nav class="side-nav">
+      <button class="side-item active" data-route="qazanc">💸 QAZANC</button>
+      <button class="side-item" data-route="dostlar">👥 DOSTLAR</button>
+      <button class="side-item" data-route="qaydalar">📜 QAYDALAR</button>
+      <button class="side-item" data-route="ayarlar">⚙️ AYARLAR</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section class="card profile" id="profileCard">
+      <div class="avatar" id="userAvatar"></div>
+      <div class="info">
+        <div class="name" id="userName">İstifadəçi</div>
+        <div class="username" id="userUsername">@username</div>
       </div>
-      <button id="adsWatchBtn" class="ads-watch-btn">REKLAMI İZLƏ</button>
-    </div>
+    </section>
+
+    <section class="card balance" id="balanceCard">
+      <div class="balance-item">
+        <div class="label">BİLET</div>
+        <div class="value" id="ticketsValue">0</div>
+      </div>
+      <div class="balance-item">
+        <div class="label">ADSCOİN</div>
+        <div class="value" id="adscoinValue">0</div>
+      </div>
+      <div class="balance-item">
+        <div class="label">AZN</div>
+        <div class="value" id="aznValue">0.00</div>
+      </div>
+    </section>
+
+    <section class="card ad-box" id="adBox">
+      <div class="ad-header">
+        <img src="/assets/img/coin.svg" alt="Ad" class="ad-icon" />
+        <div class="ad-title">REKLAM İZLƏ</div>
+      </div>
+      <div class="ad-progress">
+        <div class="progressbar" id="progressBar"></div>
+      </div>
+      <div class="ad-footer">
+        <div class="counter"><span id="adCount">0</span>/20</div>
+        <button id="watchAdBtn" class="primary-button">İZLƏ</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    ✅ Təsdiqləndi
   </div>
 
-  <script src="script.js"></script>
+  <nav class="tabs">
+    <button class="tab active" data-tab="qazan">🎟️ BİLET QAZAN</button>
+    <button class="tab" data-tab="convert" disabled>💱 BİLET‑COİN</button>
+    <button class="tab" data-tab="events" disabled>📅 HADİSƏLƏR</button>
+    <button class="tab" data-tab="tasks" disabled>🧩 GÖREVLƏR</button>
+    <button class="tab" data-tab="cashout" disabled>🏦 ÇIXARIŞ</button>
+  </nav>
+
+  <script src="/assets/js/app.js"></script>
 </body>
 </html>
