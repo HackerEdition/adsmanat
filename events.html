@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HADİSƏLƏR - ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="logo-icon">💎</div>
+                <span>ADSMANAT</span>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">🎯</span>
+                <span>QAZANC</span>
+            </a>
+            <a href="friends.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>DOSTLAR</span>
+            </a>
+            <a href="rules.html" class="menu-item">
+                <span class="menu-icon">📜</span>
+                <span>QAYDALAR</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>AYARLAR</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Events Title -->
+        <div class="events-card">
+            <h2>HADİSƏLƏR</h2>
+            
+            <!-- First Week Event -->
+            <div class="event-item">
+                <div class="event-header">
+                    <h3>BOTUN İLK HƏFTƏSİ</h3>
+                </div>
+                
+                <div class="event-content">
+                    <div class="event-info">
+                        <p>QAYDALARLARDA QAYDALAR HİSSƏSİNDƏ TANIŞ OLA BİLƏRSİNİZ</p>
+                        <div class="event-reward">
+                            <span class="reward-label">QAZANC:</span>
+                            <span class="reward-value">50 ADSCOİN</span>
+                        </div>
+                    </div>
+                    
+                    <button class="join-btn" id="joinEventBtn">QOŞUL</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tabs -->
+    <div class="tabs-container" id="tabsContainer">
+        <div class="tabs">
+            <a href="index.html" class="tab">
+                <div class="tab-icon">🎫</div>
+                <span>BİLET QAZAN</span>
+            </a>
+            <a href="biletcoin.html" class="tab">
+                <div class="tab-icon">🎡</div>
+                <span>BİLET-COİN</span>
+            </a>
+            <a href="events.html" class="tab active">
+                <div class="tab-icon">🎉</div>
+                <span>HADİSƏLƏR</span>
+            </a>
+            <a href="tasks.html" class="tab">
+                <div class="tab-icon">✅</div>
+                <span>GÖREVLƏR</span>
+            </a>
+            <a href="withdraw.html" class="tab">
+                <div class="tab-icon">💰</div>
+                <span>ÇIXARIŞ</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Events page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const joinEventBtn = document.getElementById('joinEventBtn');
+            
+            joinEventBtn.addEventListener('click', function() {
+                // Redirect to rules page
+                window.location.href = 'rules.html';
+            });
+        });
+    </script>
+</body>
+</html>

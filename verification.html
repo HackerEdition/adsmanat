@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod Təsdiqi - ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="verification.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="verification-container">
+            <div class="verification-card">
+                <div class="verification-header">
+                    <div class="verification-icon">🔐</div>
+                    <h2>Təsdiq Kodu</h2>
+                    <p>Bu kodu ADSMANAT botunda daxil edin</p>
+                </div>
+                
+                <div class="code-display">
+                    <div class="code-box">
+                        <span class="code-text" id="generatedCode">YOXDUR</span>
+                    </div>
+                    <button class="copy-btn" id="copyBtn">📋 KOPYALA</button>
+                </div>
+                
+                <div class="verification-info">
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <span class="info-text">Kod 5 dəqiqə ərzində etibarlıdır</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🔄</span>
+                        <span class="info-text">Yeni kod almaq üçün səhifəni yeniləyin</span>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="refresh-btn" id="refreshBtn">🔄 YENİ KOD</button>
+                    <button class="back-btn" id="backBtn">◀️ GERİ</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <span class="success-icon">✅</span>
+        <span class="success-text">Kod kopyalandı!</span>
+    </div>
+
+    <script src="verification.js"></script>
+</body>
+</html>

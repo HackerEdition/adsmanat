@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYARLAR - ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="settings.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="logo-icon">💎</div>
+                <span>ADSMANAT</span>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">🎯</span>
+                <span>QAZANC</span>
+            </a>
+            <a href="friends.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>DOSTLAR</span>
+            </a>
+            <a href="rules.html" class="menu-item">
+                <span class="menu-icon">📜</span>
+                <span>QAYDALAR</span>
+            </a>
+            <a href="settings.html" class="menu-item active">
+                <span class="menu-icon">⚙️</span>
+                <span>AYARLAR</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Settings Title -->
+        <div class="settings-card">
+            <div class="settings-header">
+                <div class="settings-icon">⚙️</div>
+                <h2>AYARLAR</h2>
+            </div>
+        </div>
+
+        <!-- Language Settings -->
+        <div class="settings-section">
+            <div class="section-header">
+                <div class="section-icon">🌐</div>
+                <h3>Language</h3>
+            </div>
+            
+            <div class="language-options">
+                <div class="language-option active" data-lang="az">
+                    <div class="language-flag">🇦🇿</div>
+                    <div class="language-info">
+                        <div class="language-name">AZƏRBAYCAN</div>
+                        <div class="language-native">Azərbaycanca</div>
+                    </div>
+                    <div class="language-check">✓</div>
+                </div>
+                
+                <div class="language-option" data-lang="ru">
+                    <div class="language-flag">🇷🇺</div>
+                    <div class="language-info">
+                        <div class="language-name">RUS</div>
+                        <div class="language-native">Русский</div>
+                    </div>
+                    <div class="language-check">✓</div>
+                </div>
+                
+                <div class="language-option" data-lang="en">
+                    <div class="language-flag">🇺🇸</div>
+                    <div class="language-info">
+                        <div class="language-name">İNGİLİS</div>
+                        <div class="language-native">English</div>
+                    </div>
+                    <div class="language-check">✓</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Settings -->
+        <div class="settings-section">
+            <div class="section-header">
+                <div class="section-icon">🆘</div>
+                <h3>YARDIM VƏ DƏSTƏK</h3>
+            </div>
+            
+            <div class="support-options">
+                <a href="https://t.me/c/2252090240/123" target="_blank" class="support-option">
+                    <div class="support-icon">📞</div>
+                    <div class="support-info">
+                        <div class="support-title">Dəstək Xidməti</div>
+                        <div class="support-description">Bizimlə əlaqə saxlayın</div>
+                    </div>
+                    <div class="support-arrow">→</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Coming Soon Section -->
+        <div class="settings-section">
+            <div class="section-header">
+                <div class="section-icon">🔮</div>
+                <h3>GƏLƏCƏK XÜSUSİYYƏTLƏR</h3>
+            </div>
+            
+            <div class="coming-soon-options">
+                <div class="coming-soon-option disabled">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-info">
+                        <div class="feature-title">Referral Sistemi</div>
+                        <div class="feature-description">Dostlarınızı dəvət edin və mükafat qazanın</div>
+                    </div>
+                    <div class="coming-soon-badge">Tezliklə</div>
+                </div>
+                
+                <div class="coming-soon-option disabled">
+                    <div class="feature-icon">🔔</div>
+                    <div class="feature-info">
+                        <div class="feature-title">Bildirişlər</div>
+                        <div class="feature-description">Yeni görevlər və hadisələr haqqında məlumat alın</div>
+                    </div>
+                    <div class="coming-soon-badge">Tezliklə</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Info -->
+        <div class="settings-section">
+            <div class="app-info">
+                <div class="app-logo">💎</div>
+                <div class="app-details">
+                    <div class="app-name">ADSMANAT</div>
+                    <div class="app-version">Versiya 1.0.0</div>
+                    <div class="app-description">Telegram Mini App</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Language Change Message -->
+    <div class="language-message" id="languageMessage">
+        <span class="message-icon">🌐</span>
+        <span class="message-text">Dil dəyişdirildi! Səhifə yenilənir...</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

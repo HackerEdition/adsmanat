@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GÖREVLƏR - ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tasks.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="logo-icon">💎</div>
+                <span>ADSMANAT</span>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">🎯</span>
+                <span>QAZANC</span>
+            </a>
+            <a href="friends.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>DOSTLAR</span>
+            </a>
+            <a href="rules.html" class="menu-item">
+                <span class="menu-icon">📜</span>
+                <span>QAYDALAR</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>AYARLAR</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Tasks Title -->
+        <div class="tasks-card">
+            <h2>GÖREVLƏR</h2>
+        </div>
+
+        <!-- Special Tasks -->
+        <div class="special-tasks-section">
+            <h3 class="section-title">ÖZƏL GÖREVLƏR</h3>
+            
+            <div class="reward-info">
+                <span class="reward-badge">5 ADSCOİN</span>
+            </div>
+
+            <!-- YouTube Task -->
+            <div class="task-item">
+                <div class="task-content">
+                    <div class="task-icon">📺</div>
+                    <div class="task-text">
+                        <div class="task-title">YOUTUBE AİLƏMİZƏ QATIL (ABUNƏ OL)</div>
+                    </div>
+                </div>
+                <button class="task-btn" data-link="https://youtube.com/@adsmanat?si=p5erKFg_4Ds3SU2d" data-reward="5">KEÇİD</button>
+            </div>
+
+            <!-- Telegram Task -->
+            <div class="task-item">
+                <div class="task-content">
+                    <div class="task-icon">📱</div>
+                    <div class="task-text">
+                        <div class="task-title">RƏSMİ TELEGRAM KANALINA ABUNƏ OL</div>
+                    </div>
+                </div>
+                <button class="task-btn" data-link="https://t.me/adsmanatofficial" data-reward="5">KEÇİD</button>
+            </div>
+
+            <!-- TikTok Task -->
+            <div class="task-item">
+                <div class="task-content">
+                    <div class="task-icon">🎵</div>
+                    <div class="task-text">
+                        <div class="task-title">RƏSMİ TİKTOK KANALIMIZA ABUNƏ OL</div>
+                    </div>
+                </div>
+                <button class="task-btn" data-link="https://www.tiktok.com/@adsmanat?is_from_webapp=1&sender_device=pc" data-reward="5">KEÇİD</button>
+            </div>
+        </div>
+
+        <!-- Daily Tasks -->
+        <div class="daily-tasks-section">
+            <h3 class="section-title">GÜNLÜK GÖREVLƏR</h3>
+            
+            <!-- Short Link Task 1 -->
+            <div class="task-item daily-task">
+                <div class="task-content">
+                    <div class="task-icon">🔗</div>
+                    <div class="task-text">
+                        <div class="task-title">Short Link 1 - 2 ADSCOİN</div>
+                        <div class="task-description">Link keçin və kodu daxil edin</div>
+                    </div>
+                </div>
+                <button class="task-btn daily-task-btn" data-link="https://example.com/shortlink1" data-reward="2">KEÇİD</button>
+                
+                <!-- Code Input Section (Hidden by default) -->
+                <div class="code-input-section" style="display: none;">
+                    <div class="code-input-container">
+                        <input type="text" class="code-input" placeholder="Kodu daxil edin..." maxlength="10">
+                        <div class="code-buttons">
+                            <button class="code-cancel-btn">LƏĞV ET</button>
+                            <button class="code-confirm-btn">TƏSDİQ ET</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Short Link Task 2 -->
+            <div class="task-item daily-task">
+                <div class="task-content">
+                    <div class="task-icon">🔗</div>
+                    <div class="task-text">
+                        <div class="task-title">Short Link 2 - 3 ADSCOİN</div>
+                        <div class="task-description">Link keçin və kodu daxil edin</div>
+                    </div>
+                </div>
+                <button class="task-btn daily-task-btn" data-link="https://example.com/shortlink2" data-reward="3">KEÇİD</button>
+                
+                <!-- Code Input Section (Hidden by default) -->
+                <div class="code-input-section" style="display: none;">
+                    <div class="code-input-container">
+                        <input type="text" class="code-input" placeholder="Kodu daxil edin..." maxlength="10">
+                        <div class="code-buttons">
+                            <button class="code-cancel-btn">LƏĞV ET</button>
+                            <button class="code-confirm-btn">TƏSDİQ ET</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Short Link Task 3 -->
+            <div class="task-item daily-task">
+                <div class="task-content">
+                    <div class="task-icon">🔗</div>
+                    <div class="task-text">
+                        <div class="task-title">Short Link 3 - 1 ADSCOİN</div>
+                        <div class="task-description">Link keçin və kodu daxil edin</div>
+                    </div>
+                </div>
+                <button class="task-btn daily-task-btn" data-link="https://example.com/shortlink3" data-reward="1">KEÇİD</button>
+                
+                <!-- Code Input Section (Hidden by default) -->
+                <div class="code-input-section" style="display: none;">
+                    <div class="code-input-container">
+                        <input type="text" class="code-input" placeholder="Kodu daxil edin..." maxlength="10">
+                        <div class="code-buttons">
+                            <button class="code-cancel-btn">LƏĞV ET</button>
+                            <button class="code-confirm-btn">TƏSDİQ ET</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tabs -->
+    <div class="tabs-container" id="tabsContainer">
+        <div class="tabs">
+            <a href="index.html" class="tab">
+                <div class="tab-icon">🎫</div>
+                <span>BİLET QAZAN</span>
+            </a>
+            <a href="biletcoin.html" class="tab">
+                <div class="tab-icon">🎡</div>
+                <span>BİLET-COİN</span>
+            </a>
+            <a href="events.html" class="tab">
+                <div class="tab-icon">🎉</div>
+                <span>HADİSƏLƏR</span>
+            </a>
+            <a href="tasks.html" class="tab active">
+                <div class="tab-icon">✅</div>
+                <span>GÖREVLƏR</span>
+            </a>
+            <a href="withdraw.html" class="tab">
+                <div class="tab-icon">💰</div>
+                <span>ÇIXARIŞ</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="tasks.js"></script>
+</body>
+</html>
