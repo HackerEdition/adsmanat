@@ -1,0 +1,305 @@
+/* Biletcoin Page Specific Styles */
+
+/* Conversion Section */
+.conversion-section {
+    margin-bottom: 30px;
+}
+
+.conversion-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.conversion-card h3 {
+    color: #00ffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.balance-display {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.balance-item {
+    flex: 1;
+    padding: 15px 10px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    text-align: center;
+}
+
+.balance-label {
+    display: block;
+    font-size: 12px;
+    color: #cccccc;
+    margin-bottom: 5px;
+}
+
+.balance-value {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* Wheel Section */
+.wheel-section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.wheel-container {
+    text-align: center;
+}
+
+.wheel {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto 30px;
+    background: conic-gradient(
+        #ff6b6b 0deg 60deg,
+        #4ecdc4 60deg 120deg,
+        #45b7d1 120deg 180deg,
+        #96ceb4 180deg 240deg,
+        #feca57 240deg 300deg,
+        #ff9ff3 300deg 360deg
+    );
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 4px solid #00ffff;
+}
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    border-radius: 50%;
+    border: 3px solid #00ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.wheel-pointer {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #ff0000;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+}
+
+.wheel-segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.wheel-segment:nth-child(2) { transform: rotate(0deg); }
+.wheel-segment:nth-child(3) { transform: rotate(60deg); }
+.wheel-segment:nth-child(4) { transform: rotate(120deg); }
+.wheel-segment:nth-child(5) { transform: rotate(180deg); }
+.wheel-segment:nth-child(6) { transform: rotate(240deg); }
+.wheel-segment:nth-child(7) { transform: rotate(300deg); }
+
+.wheel-segment span {
+    transform: rotate(30deg);
+    white-space: nowrap;
+}
+
+/* Spin Button */
+.spin-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.spin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(255, 107, 107, 0.5);
+}
+
+.spin-btn:active {
+    transform: translateY(0);
+}
+
+.spin-btn:disabled {
+    background: #666666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.spin-btn i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Result Message */
+.result-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+    color: #000000;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+    z-index: 3000;
+    display: none;
+    animation: resultPop 0.5s ease;
+}
+
+.result-message.show {
+    display: block;
+}
+
+.result-message.error {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.result-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.result-content i {
+    font-size: 20px;
+}
+
+@keyframes resultPop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Wheel Spinning Animation */
+.wheel.spinning {
+    animation: wheelSpin 3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes wheelSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .wheel {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .wheel-segment {
+        font-size: 10px;
+    }
+    
+    .wheel-segment span {
+        transform: rotate(30deg) scale(0.8);
+    }
+    
+    .balance-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .balance-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .balance-label {
+        margin-bottom: 0;
+    }
+    
+    .result-message {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .result-content {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wheel {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .wheel-segment {
+        font-size: 9px;
+    }
+    
+    .wheel-segment span {
+        transform: rotate(30deg) scale(0.7);
+    }
+    
+    .spin-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}

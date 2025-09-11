@@ -1,0 +1,523 @@
+/* Settings Page Specific Styles */
+
+/* Settings Section */
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.settings-card h3 {
+    text-align: center;
+    color: #00ffff;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Setting Groups */
+.setting-group {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.setting-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.setting-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.setting-header i {
+    font-size: 18px;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.setting-header h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Language Options */
+.language-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.language-btn {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.language-btn:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+.language-btn.active {
+    background: linear-gradient(135deg, #00ffff 0%, #0080ff 100%);
+    color: #000000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.language-btn .flag {
+    font-size: 20px;
+}
+
+.language-btn span:last-child {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Support Button */
+.support-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.support-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(255, 107, 107, 0.5);
+}
+
+.support-btn i:first-child {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.support-btn span {
+    font-weight: bold;
+    font-size: 14px;
+    flex: 1;
+    text-align: left;
+}
+
+.support-btn i:last-child {
+    font-size: 14px;
+}
+
+/* Referral Button */
+.referral-btn {
+    background: linear-gradient(135deg, #ff00ff 0%, #cc00cc 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.referral-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(255, 0, 255, 0.5);
+}
+
+.referral-btn i:first-child {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.referral-btn span {
+    font-weight: bold;
+    font-size: 14px;
+    flex: 1;
+    text-align: left;
+}
+
+.referral-btn i:last-child {
+    font-size: 14px;
+}
+
+/* App Info */
+.app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.info-label {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.info-value {
+    color: #00ffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* Referral Modal */
+.referral-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    backdrop-filter: blur(5px);
+}
+
+.referral-modal.show {
+    display: flex;
+}
+
+.referral-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #ff00ff;
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+    animation: modalPop 0.3s ease;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.referral-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.referral-header h4 {
+    color: #ff00ff;
+    font-size: 18px;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+.close-referral {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-referral:hover {
+    background: #ff0000;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.referral-message {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.referral-message i {
+    font-size: 48px;
+    color: #ff00ff;
+    margin-bottom: 15px;
+    display: block;
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.referral-message h5 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.referral-message p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Settings Message */
+.settings-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+    color: #000000;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    animation: messagePop 0.5s ease;
+}
+
+.settings-message.show {
+    display: flex;
+}
+
+@keyframes messagePop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .settings-card {
+        padding: 20px;
+    }
+    
+    .settings-card h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .setting-group {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .setting-header h4 {
+        font-size: 15px;
+    }
+    
+    .language-btn {
+        padding: 12px 15px;
+    }
+    
+    .language-btn .flag {
+        font-size: 18px;
+    }
+    
+    .language-btn span:last-child {
+        font-size: 13px;
+    }
+    
+    .support-btn,
+    .referral-btn {
+        padding: 12px 15px;
+    }
+    
+    .support-btn span,
+    .referral-btn span {
+        font-size: 13px;
+    }
+    
+    .info-item {
+        padding: 8px 12px;
+    }
+    
+    .info-label,
+    .info-value {
+        font-size: 13px;
+    }
+    
+    .referral-content {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .referral-message i {
+        font-size: 40px;
+    }
+    
+    .referral-message h5 {
+        font-size: 15px;
+    }
+    
+    .referral-message p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-card {
+        padding: 15px;
+    }
+    
+    .language-options {
+        gap: 8px;
+    }
+    
+    .language-btn {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+    
+    .language-btn .flag {
+        font-size: 16px;
+    }
+    
+    .language-btn span:last-child {
+        font-size: 12px;
+    }
+    
+    .support-btn,
+    .referral-btn {
+        padding: 10px 12px;
+    }
+    
+    .support-btn i:first-child,
+    .referral-btn i:first-child {
+        font-size: 16px;
+        margin-right: 8px;
+    }
+    
+    .support-btn span,
+    .referral-btn span {
+        font-size: 12px;
+    }
+    
+    .support-btn i:last-child,
+    .referral-btn i:last-child {
+        font-size: 12px;
+    }
+    
+    .info-item {
+        padding: 6px 10px;
+    }
+    
+    .info-label,
+    .info-value {
+        font-size: 12px;
+    }
+}
+
+/* Button Click Effects */
+.btn-click {
+    animation: clickEffect 0.2s ease;
+}
+
+@keyframes clickEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Language Selection Animation */
+.language-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.language-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.language-btn:hover::before {
+    left: 100%;
+}
+
+/* Support Button Hover Effect */
+.support-btn:hover {
+    background: linear-gradient(135deg, #ee5a24 0%, #ff6b6b 100%);
+}
+
+/* Referral Button Hover Effect */
+.referral-btn:hover {
+    background: linear-gradient(135deg, #cc00cc 0%, #ff00ff 100%);
+}
+
+/* Loading State */
+.language-btn.loading {
+    background: #666666;
+    cursor: not-allowed;
+}
+
+.language-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="fas fa-sync-alt"></i>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Kod Təsdiqi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="verification.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="verification-container">
+            <div class="verification-card">
+                <div class="verification-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h2>Kod Təsdiqi</h2>
+                    <p>Short linkdən baxdıqdan sonra gələn kodu daxil edin</p>
+                </div>
+                
+                <div class="code-generator">
+                    <div class="generated-code" id="generatedCode">
+                        <span id="codeDisplay">KOD YARADILIR...</span>
+                    </div>
+                    <button class="generate-btn" id="generateBtn">
+                        <i class="fas fa-sync-alt"></i>
+                        YENİ KOD
+                    </button>
+                </div>
+                
+                <div class="instructions">
+                    <h3>Təlimatlar:</h3>
+                    <ol>
+                        <li>Yuxarıdakı kodu kopyalayın</li>
+                        <li>Short linkdən baxdıqdan sonra gələn səhifədə bu kodu daxil edin</li>
+                        <li>Kod düzgün olduqda 3 ADSCOİN qazanacaqsınız</li>
+                    </ol>
+                </div>
+                
+                <div class="actions">
+                    <button class="copy-btn" id="copyBtn">
+                        <i class="fas fa-copy"></i>
+                        KODU KOPYALA
+                    </button>
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                        GERİ QAYIT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i>
+        <span>Kod kopyalandı!</span>
+    </div>
+
+    <script src="verification.js"></script>
+</body>
+</html>

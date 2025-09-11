@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Ayarlar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="settings.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="slide-menu-header">
+            <div class="slide-menu-logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="slide-menu-content">
+            <div class="menu-item" data-page="index">
+                <i class="fas fa-coins"></i>
+                <span>QAZANC</span>
+            </div>
+            <div class="menu-item" data-page="friends">
+                <i class="fas fa-users"></i>
+                <span>DOSTLAR</span>
+            </div>
+            <div class="menu-item" data-page="rules">
+                <i class="fas fa-book"></i>
+                <span>QAYDALAR</span>
+            </div>
+            <div class="menu-item active" data-page="settings">
+                <i class="fas fa-cog"></i>
+                <span>AYARLAR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Settings Section -->
+        <div class="settings-section">
+            <div class="settings-card">
+                <h3>AYARLAR</h3>
+                
+                <!-- Language Selection -->
+                <div class="setting-group">
+                    <div class="setting-header">
+                        <i class="fas fa-language"></i>
+                        <h4>Dil Seçimi</h4>
+                    </div>
+                    <div class="language-options">
+                        <button class="language-btn active" data-lang="az">
+                            <span class="flag">🇦🇿</span>
+                            <span>AZƏRBAYCAN</span>
+                        </button>
+                        <button class="language-btn" data-lang="ru">
+                            <span class="flag">🇷🇺</span>
+                            <span>РУССКИЙ</span>
+                        </button>
+                        <button class="language-btn" data-lang="en">
+                            <span class="flag">🇺🇸</span>
+                            <span>ENGLISH</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Help and Support -->
+                <div class="setting-group">
+                    <div class="setting-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>Yardım və Dəstək</h4>
+                    </div>
+                    <button class="support-btn" id="supportBtn">
+                        <i class="fas fa-headset"></i>
+                        <span>YARDIM VƏ DƏSTƏK</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
+                </div>
+                
+                <!-- Referral Section -->
+                <div class="setting-group">
+                    <div class="setting-header">
+                        <i class="fas fa-users"></i>
+                        <h4>Referral</h4>
+                    </div>
+                    <button class="referral-btn" id="referralBtn">
+                        <i class="fas fa-share-alt"></i>
+                        <span>REFERRAL</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- App Info -->
+                <div class="setting-group">
+                    <div class="setting-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h4>Tətbiq Məlumatları</h4>
+                    </div>
+                    <div class="app-info">
+                        <div class="info-item">
+                            <span class="info-label">Versiya</span>
+                            <span class="info-value">1.0.0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Tarix</span>
+                            <span class="info-value">2024</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Developer</span>
+                            <span class="info-value">ADSMANAT Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Referral Modal -->
+    <div class="referral-modal" id="referralModal">
+        <div class="referral-content">
+            <div class="referral-header">
+                <h4>Referral</h4>
+                <button class="close-referral" id="closeReferral">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="referral-body">
+                <div class="referral-message">
+                    <i class="fas fa-tools"></i>
+                    <h5>BU BÖLMƏ GƏLƏCƏKDƏ HAZIRLANACAQ</h5>
+                    <p>Referral sistemi tezliklə əlavə ediləcək. Yeniliklər üçün bizi izləməkdə qalın!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="settings-message" id="settingsMessage">
+        <i class="fas fa-check-circle"></i>
+        <span id="messageText">Ayarlar yeniləndi!</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

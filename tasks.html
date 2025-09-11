@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Görevlər</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tasks.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="slide-menu-header">
+            <div class="slide-menu-logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="slide-menu-content">
+            <div class="menu-item" data-page="index">
+                <i class="fas fa-coins"></i>
+                <span>QAZANC</span>
+            </div>
+            <div class="menu-item" data-page="friends">
+                <i class="fas fa-users"></i>
+                <span>DOSTLAR</span>
+            </div>
+            <div class="menu-item" data-page="rules">
+                <i class="fas fa-book"></i>
+                <span>QAYDALAR</span>
+            </div>
+            <div class="menu-item" data-page="settings">
+                <i class="fas fa-cog"></i>
+                <span>AYARLAR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Tasks Section -->
+        <div class="tasks-section">
+            <div class="tasks-card">
+                <h3>GÖREVLƏR</h3>
+                
+                <!-- Special Tasks -->
+                <div class="special-tasks">
+                    <h4>ÖZƏL GÖREVLƏR</h4>
+                    <div class="task-item">
+                        <div class="task-info">
+                            <div class="task-icon">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <div class="task-details">
+                                <h5>YOUTUBE AİLƏMİZƏ QATIL (ABUNƏ OL)</h5>
+                                <p>5 ADSCOİN qazanın</p>
+                            </div>
+                        </div>
+                        <button class="task-btn" id="youtubeTask">
+                            <i class="fas fa-external-link-alt"></i>
+                            KEÇİD
+                        </button>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-info">
+                            <div class="task-icon">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div class="task-details">
+                                <h5>RƏSMİ TELEGRAM KANALINA ABUNƏ OL</h5>
+                                <p>5 ADSCOİN qazanın</p>
+                            </div>
+                        </div>
+                        <button class="task-btn" id="telegramTask">
+                            <i class="fas fa-external-link-alt"></i>
+                            KEÇİD
+                        </button>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-info">
+                            <div class="task-icon">
+                                <i class="fab fa-tiktok"></i>
+                            </div>
+                            <div class="task-details">
+                                <h5>RƏSMİ TİKTOK KANALIMIZA ABUNƏ OL</h5>
+                                <p>5 ADSCOİN qazanın</p>
+                            </div>
+                        </div>
+                        <button class="task-btn" id="tiktokTask">
+                            <i class="fas fa-external-link-alt"></i>
+                            KEÇİD
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Daily Tasks -->
+                <div class="daily-tasks">
+                    <h4>GÜNLÜK GÖREVLƏR</h4>
+                    <div class="task-item">
+                        <div class="task-info">
+                            <div class="task-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="task-details">
+                                <h5>SHORT LİNK İZLƏ</h5>
+                                <p>3 ADSCOİN qazanın</p>
+                            </div>
+                        </div>
+                        <button class="task-btn" id="shortLinkTask">
+                            <i class="fas fa-external-link-alt"></i>
+                            KEÇİD
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verification Modal -->
+        <div class="verification-modal" id="verificationModal">
+            <div class="verification-content">
+                <div class="verification-header">
+                    <h4>Kodu Daxil Edin</h4>
+                    <button class="close-verification" id="closeVerification">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="verification-body">
+                    <p>Short linkdən baxdıqdan sonra gələn kodu daxil edin:</p>
+                    <div class="code-input-container">
+                        <input type="text" id="verificationCode" placeholder="Kodu daxil edin" maxlength="6">
+                        <button class="generate-code-btn" id="generateCodeBtn">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="verification-actions">
+                        <button class="cancel-btn" id="cancelVerification">
+                            <i class="fas fa-times"></i>
+                            LƏĞV ET
+                        </button>
+                        <button class="confirm-btn" id="confirmVerification">
+                            <i class="fas fa-check"></i>
+                            TƏSDİQ ET
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="tab" data-page="index">
+                <i class="fas fa-ticket-alt"></i>
+                <span>BİLET QAZAN</span>
+            </div>
+            <div class="tab" data-page="biletcoin">
+                <i class="fas fa-exchange-alt"></i>
+                <span>BİLET-COİN</span>
+            </div>
+            <div class="tab" data-page="events">
+                <i class="fas fa-calendar-star"></i>
+                <span>HADİSƏLƏR</span>
+            </div>
+            <div class="tab active" data-page="tasks">
+                <i class="fas fa-tasks"></i>
+                <span>GÖREVLƏR</span>
+            </div>
+            <div class="tab" data-page="withdraw">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>ÇIXARIŞ</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="tasks.js"></script>
+</body>
+</html>

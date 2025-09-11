@@ -1,0 +1,364 @@
+/* Rules Page Specific Styles */
+
+/* Rules Section */
+.rules-section {
+    margin-bottom: 30px;
+}
+
+.rules-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Rule Type Selector */
+.rule-type-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.rule-type-btn {
+    flex: 1;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    border-radius: 25px;
+    padding: 12px 20px;
+    color: #00ffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.rule-type-btn:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+.rule-type-btn.active {
+    background: linear-gradient(135deg, #00ffff 0%, #0080ff 100%);
+    color: #000000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.rule-type-btn i {
+    font-size: 16px;
+}
+
+/* Rule Content */
+.rule-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.rule-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rule-content h3 {
+    color: #00ffff;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Rule Items */
+.rule-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.rule-item:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+}
+
+.rule-item.special {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+}
+
+.rule-item.special:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.2) 0%, rgba(255, 0, 255, 0.1) 100%);
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
+}
+
+.rule-item.warning {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+    border-color: #ffa500;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.2);
+}
+
+.rule-item.warning:hover {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.2) 0%, rgba(255, 165, 0, 0.1) 100%);
+    box-shadow: 0 5px 20px rgba(255, 165, 0, 0.3);
+}
+
+.rule-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.rule-item.special .rule-icon {
+    background: rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.rule-item.warning .rule-icon {
+    background: rgba(255, 165, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+}
+
+.rule-text {
+    flex: 1;
+}
+
+.rule-text h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.rule-text p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.rule-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Profile Link */
+.profile-link {
+    margin-top: 10px;
+}
+
+.profile-link a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.profile-link a:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .rules-card {
+        padding: 20px;
+    }
+    
+    .rule-type-selector {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .rule-type-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .rule-content h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .rule-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .rule-icon {
+        align-self: center;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    
+    .rule-text h4 {
+        font-size: 15px;
+    }
+    
+    .rule-text p {
+        font-size: 13px;
+    }
+    
+    .profile-link a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rules-card {
+        padding: 15px;
+    }
+    
+    .rule-type-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .rule-type-btn i {
+        font-size: 14px;
+    }
+    
+    .rule-content h3 {
+        font-size: 16px;
+    }
+    
+    .rule-item {
+        padding: 12px;
+    }
+    
+    .rule-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+    
+    .rule-text h4 {
+        font-size: 14px;
+    }
+    
+    .rule-text p {
+        font-size: 12px;
+    }
+}
+
+/* Animation for rule items */
+.rule-item {
+    animation: slideInUp 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.rule-item:nth-child(1) { animation-delay: 0.1s; }
+.rule-item:nth-child(2) { animation-delay: 0.2s; }
+.rule-item:nth-child(3) { animation-delay: 0.3s; }
+.rule-item:nth-child(4) { animation-delay: 0.4s; }
+.rule-item:nth-child(5) { animation-delay: 0.5s; }
+.rule-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Special effects for special rules */
+.rule-item.special {
+    position: relative;
+    overflow: hidden;
+}
+
+.rule-item.special::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Button click effects */
+.btn-click {
+    animation: clickEffect 0.2s ease;
+}
+
+@keyframes clickEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 100;
+}
+
+.scroll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    background: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Hide scroll indicator on mobile */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
