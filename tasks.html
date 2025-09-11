@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>GÖREVLƏR • ADSMANAT</title>
+  <link rel="stylesheet" href="/workspace/styles.css" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <script defer src="/workspace/common.js"></script>
+  <script defer src="/workspace/tasks.js"></script>
+  <style>
+    /* Page-specific small tweaks */
+    .task-row { display: grid; gap: 10px; }
+    .task-actions { display: flex; gap: 10px; align-items: center; }
+  </style>
+  <!-- Telegram Mini App Safe Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; img-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; frame-ancestors 'self' https://*.telegram.org https://web.telegram.org;" />
+  <meta name="referrer" content="no-referrer" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true"></div>
+        <div class="brand__text">ADSMANAT</div>
+      </div>
+      <div class="chip">GÖREVLƏR</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 class="section-title">GÖREVLƏR</h2>
+      <div class="muted">Aşağıdan günlük və özəl görevleri tamamlayın.</div>
+    </section>
+
+    <section class="card">
+      <div class="status-row">
+        <div class="section-title">GÜNLÜK GÖREVLƏR</div>
+        <div id="daily-status" class="status-badge">Gözləyir</div>
+      </div>
+
+      <div class="task-row">
+        <div class="card">
+          <div class="status-row">
+            <div>
+              <div class="section-title">Short Link (Günlük)</div>
+              <div class="muted">Keçiddən sonra kodu bu səhifədə təsdiqləyin.</div>
+            </div>
+            <div id="daily-complete-badge" class="status-badge hidden completed-badge">Tamamlandı</div>
+          </div>
+          <div class="task-actions">
+            <button id="btn-open-link" class="btn btn-primary">Keçid</button>
+            <a id="btn-open-verify-direct" class="btn btn-secondary" href="/workspace/verification.html" target="_blank" rel="noopener">Kod Səhifəsi</a>
+          </div>
+
+          <div id="code-panel" class="code-area hidden">
+            <div class="muted code-hint" id="code-hint">Keçiddən sonra gələn kodu daxil edin.</div>
+            <input id="input-code" class="input" placeholder="Kod" autocomplete="one-time-code" inputmode="latin" />
+            <div class="row">
+              <button id="btn-cancel" class="btn btn-danger col">Ləğv et</button>
+              <button id="btn-confirm" class="btn btn-success col">Təsdiq et</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+  </main>
+</body>
+</html>
+

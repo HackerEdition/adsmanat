@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Təsdiq Kodu • ADSMANAT</title>
+  <link rel="stylesheet" href="/workspace/styles.css" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <script defer src="/workspace/common.js"></script>
+  <script defer src="/workspace/verification.js"></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; img-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; frame-ancestors 'self' https://*.telegram.org https://web.telegram.org;" />
+  <meta name="referrer" content="no-referrer" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true"></div>
+        <div class="brand__text">ADSMANAT</div>
+      </div>
+      <div class="chip">Təsdiq</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 class="section-title">Kod yaradıldı</h2>
+      <div class="muted">Bu kodu geri qayıdıb "Görevler" səhifəsində daxil edin.</div>
+      <div class="code-area" style="margin-top:12px;">
+        <div class="input-group">
+          <input id="code-display" class="input" readonly />
+          <button id="btn-copy" class="btn btn-primary">Kopyala</button>
+        </div>
+        <div class="row">
+          <button id="btn-regenerate" class="btn">Yenilə</button>
+          <a class="btn btn-success" href="/workspace/tasks.html">Görevlerə Qayıt</a>
+        </div>
+        <div id="ttl-info" class="code-hint"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
