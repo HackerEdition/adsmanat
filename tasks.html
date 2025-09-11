@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="az">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>GÖREVLƏR · ADSMANAT</title>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="title">GÖREVLƏR</div>
+			<div class="col">
+				<div class="title" style="font-size:16px; color:#a3b3c2;">Günlük görevlər (test)</div>
+				<div id="daily-task" class="col" style="gap:10px;">
+					<div class="row" style="justify-content: space-between;">
+						<div class="col">
+							<div style="font-weight:700;">Short Link-i keç</div>
+							<div class="muted">Keçidə klik et, sonra kodu daxil et</div>
+						</div>
+						<div class="row">
+							<a id="shortlink-go" class="shortlink" href="#" target="_blank" rel="noopener">Keçid</a>
+						</div>
+					</div>
+					<div id="code-panel" class="code-panel">
+						<div class="col card">
+							<div style="font-weight:700; margin-bottom:6px;">Kodu daxil edin</div>
+							<input id="code-input" class="input" placeholder="Məs: AB12CD34" autocomplete="one-time-code" />
+							<div class="row" style="justify-content: flex-end;">
+								<button id="btn-cancel" class="btn btn-secondary">Ləğv et</button>
+								<button id="btn-confirm" class="btn btn-primary">Təsdiq et</button>
+							</div>
+							<div class="muted">Keçidə hər klikdə yeni kod yaranır. Kod 10 dəqiqə etibarlıdır.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/assets/js/common.js"></script>
+	<script src="/assets/js/tasks.js"></script>
+</body>
+</html>
+
