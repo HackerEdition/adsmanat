@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Kod Təsdiqi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="verification-page">
+            <div class="verification-card">
+                <div class="verification-header">
+                    <h2>KOD GENERATOR</h2>
+                    <p>Short linki izlədikdən sonra bu kodu istifadə edin</p>
+                </div>
+                
+                <div class="code-generator">
+                    <div class="code-display" id="codeDisplay">
+                        <span id="generatedCode">ABC123</span>
+                    </div>
+                    <button class="generate-btn" id="generateBtn">
+                        <i class="fas fa-sync-alt"></i>
+                        YENİ KOD YARAT
+                    </button>
+                </div>
+                
+                <div class="verification-info">
+                    <div class="info-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Bu kodu tasks səhifəsində daxil edin</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Kod 5 dəqiqə ərzində etibarlıdır</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Kod təhlükəsizdir və yalnız sizin üçündür</span>
+                    </div>
+                </div>
+                
+                <div class="verification-actions">
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                        GERİ QAYIT
+                    </button>
+                    <button class="copy-btn" id="copyBtn">
+                        <i class="fas fa-copy"></i>
+                        KOPİYA ET
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Background Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="verification.js"></script>
+</body>
+</html>
