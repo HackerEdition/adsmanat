@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÇIXARIŞ - ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="withdraw.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="logo-icon">💎</div>
+                <span>ADSMANAT</span>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">🎯</span>
+                <span>QAZANC</span>
+            </a>
+            <a href="friends.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>DOSTLAR</span>
+            </a>
+            <a href="rules.html" class="menu-item">
+                <span class="menu-icon">📜</span>
+                <span>QAYDALAR</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>AYARLAR</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Withdrawal Message -->
+    <div class="withdrawal-message" id="withdrawalMessage">
+        <span class="message-icon">✅</span>
+        <span class="message-text">SİZİN ÇIXARIŞINIZ 24 SAAT ƏRZİNDƏ TƏSDİQLƏNƏCƏK</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Withdrawal Title -->
+        <div class="withdrawal-card">
+            <h2>ÇIXARIŞ</h2>
+        </div>
+
+        <!-- Current Balance Display -->
+        <div class="balance-display-card">
+            <h3>Cari Balansınız</h3>
+            <div class="balance-info">
+                <div class="balance-item">
+                    <span class="balance-label">ADSCOİN</span>
+                    <span class="balance-value" id="currentAdscoin">0</span>
+                </div>
+                <div class="balance-item">
+                    <span class="balance-label">AZN</span>
+                    <span class="balance-value" id="currentAzn">0.000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Withdrawal Form -->
+        <div class="withdrawal-form-card">
+            <form id="withdrawalForm" class="withdrawal-form">
+                <!-- Platform Selection -->
+                <div class="form-group">
+                    <label class="form-label">Platforma seç</label>
+                    <select class="form-select" id="platformSelect" required>
+                        <option value="">Platforma seçin</option>
+                        <option value="m10">M10</option>
+                    </select>
+                </div>
+
+                <!-- M10 Number Input -->
+                <div class="form-group">
+                    <label class="form-label">M10 NÖMRƏSİ</label>
+                    <input 
+                        type="tel" 
+                        class="form-input" 
+                        id="m10Number" 
+                        placeholder="+994 (00) 0000000"
+                        required
+                        maxlength="17"
+                    >
+                </div>
+
+                <!-- Amount Input -->
+                <div class="form-group">
+                    <label class="form-label">ÇIXARIŞ ETMƏK İSTƏDİYİNİZ MƏBLƏĞ</label>
+                    <div class="amount-input-container">
+                        <input 
+                            type="number" 
+                            class="form-input amount-input" 
+                            id="withdrawAmount" 
+                            placeholder="3000"
+                            min="3000"
+                            required
+                        >
+                        <span class="amount-unit">ADSCOİN</span>
+                    </div>
+                    <div class="amount-info">
+                        <span class="amount-azn" id="amountInAzn">= 0.000 AZN</span>
+                        <span class="minimum-info">Minimum: 3000 ADSCOİN (3.000 AZN)</span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-icon">💰</span>
+                    <span class="btn-text">ÇIXARIŞ ET</span>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Tabs -->
+    <div class="tabs-container" id="tabsContainer">
+        <div class="tabs">
+            <a href="index.html" class="tab">
+                <div class="tab-icon">🎫</div>
+                <span>BİLET QAZAN</span>
+            </a>
+            <a href="biletcoin.html" class="tab">
+                <div class="tab-icon">🎡</div>
+                <span>BİLET-COİN</span>
+            </a>
+            <a href="events.html" class="tab">
+                <div class="tab-icon">🎉</div>
+                <span>HADİSƏLƏR</span>
+            </a>
+            <a href="tasks.html" class="tab">
+                <div class="tab-icon">✅</div>
+                <span>GÖREVLƏR</span>
+            </a>
+            <a href="withdraw.html" class="tab active">
+                <div class="tab-icon">💰</div>
+                <span>ÇIXARIŞ</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="withdraw.js"></script>
+</body>
+</html>

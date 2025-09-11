@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="logo-icon">💎</div>
+                <span>ADSMANAT</span>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-item active">
+                <span class="menu-icon">🎯</span>
+                <span>QAZANC</span>
+            </a>
+            <a href="friends.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>DOSTLAR</span>
+            </a>
+            <a href="rules.html" class="menu-item">
+                <span class="menu-icon">📜</span>
+                <span>QAYDALAR</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>AYARLAR</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <span class="success-icon">✅</span>
+        <span class="success-text">Təsdiqləndi</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Profile Section -->
+        <div class="profile-card">
+            <div class="profile-info">
+                <img src="https://via.placeholder.com/50" alt="Profile" class="profile-image" id="profileImage">
+                <div class="profile-text">
+                    <div class="profile-name" id="profileName">İstifadəçi</div>
+                    <div class="profile-username" id="profileUsername">@username</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Balance Section -->
+        <div class="balance-card">
+            <h3>BALANS</h3>
+            <div class="balance-items">
+                <div class="balance-item">
+                    <span class="balance-label">BİLET</span>
+                    <span class="balance-value" id="ticketBalance">0</span>
+                </div>
+                <div class="balance-item">
+                    <span class="balance-label">ADSCOİN</span>
+                    <span class="balance-value" id="adscoinBalance">0</span>
+                </div>
+                <div class="balance-item">
+                    <span class="balance-label">AZN</span>
+                    <span class="balance-value" id="aznBalance">0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Watch Ad Section -->
+        <div class="watch-ad-card">
+            <div class="ad-content">
+                <div class="ad-icon">📺</div>
+                <div class="ad-text">
+                    <div class="ad-title">REKLAM İZLƏ</div>
+                    <div class="ad-counter">
+                        <span id="adCount">0</span>/20
+                    </div>
+                </div>
+            </div>
+            <button class="watch-btn" id="watchAdBtn">İZLƏ</button>
+        </div>
+    </main>
+
+    <!-- Tabs -->
+    <div class="tabs-container" id="tabsContainer">
+        <div class="tabs">
+            <a href="index.html" class="tab active">
+                <div class="tab-icon">🎫</div>
+                <span>BİLET QAZAN</span>
+            </a>
+            <a href="biletcoin.html" class="tab">
+                <div class="tab-icon">🎡</div>
+                <span>BİLET-COİN</span>
+            </a>
+            <a href="events.html" class="tab">
+                <div class="tab-icon">🎉</div>
+                <span>HADİSƏLƏR</span>
+            </a>
+            <a href="tasks.html" class="tab">
+                <div class="tab-icon">✅</div>
+                <span>GÖREVLƏR</span>
+            </a>
+            <a href="withdraw.html" class="tab">
+                <div class="tab-icon">💰</div>
+                <span>ÇIXARIŞ</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Reklam yoxlanılır...</div>
+        <div class="loading-counter" id="loadingCounter">10</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

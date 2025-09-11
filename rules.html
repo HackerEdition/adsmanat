@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAYDALAR - ADSMANAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rules.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">🪙💰</div>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="logo-icon">💎</div>
+                <span>ADSMANAT</span>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-item">
+                <span class="menu-icon">🎯</span>
+                <span>QAZANC</span>
+            </a>
+            <a href="friends.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>DOSTLAR</span>
+            </a>
+            <a href="rules.html" class="menu-item active">
+                <span class="menu-icon">📜</span>
+                <span>QAYDALAR</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>AYARLAR</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Rules Navigation -->
+        <div class="rules-nav">
+            <button class="nav-btn active" id="generalRulesBtn">ÜMUMİ QAYDALAR</button>
+            <button class="nav-btn" id="eventRulesBtn">BOTUN İLK HƏFTƏSİ</button>
+        </div>
+
+        <!-- General Rules Content -->
+        <div class="rules-content" id="generalRulesContent">
+            <div class="rules-card">
+                <div class="rules-header">
+                    <div class="rules-icon">📜</div>
+                    <h2>ADSManat Ümumi Qaydalar</h2>
+                </div>
+
+                <div class="rules-section">
+                    <div class="rule-item">
+                        <div class="rule-header">
+                            <span class="rule-emoji">🎯</span>
+                            <h3>1. Reklam Baxış Limitləri</h3>
+                        </div>
+                        <div class="rule-content">
+                            <p>Hər istifadəçi gündə maksimum 20 reklama baxa bilər 📺</p>
+                            <p>Hər reklama baxanda 🎟 1 bilet qazanırsınız</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-header">
+                            <span class="rule-emoji">🎡</span>
+                            <h3>2. Bilet → ADSCoin Çevirmə</h3>
+                        </div>
+                        <div class="rule-content">
+                            <p>Qazandığınız biletləri "Bilet-Coin" bölməsində çarxı çevirərək 🎡 ADSCOİN-ə çevirə bilərsiniz</p>
+                            <p>💰 1 ADSCOİN = 0.001 AZN</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-header">
+                            <span class="rule-emoji">🎁</span>
+                            <h3>3. Hadisələr və Çəkilişlər</h3>
+                        </div>
+                        <div class="rule-content">
+                            <p>"Hadisələr" hissəsində 🎯 müxtəlif çəkilişlər keçiriləcək</p>
+                            <p>Uduşlar 💎 təsadüfi olaraq qaliblərə paylanacaq</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-header">
+                            <span class="rule-emoji">📝</span>
+                            <h3>4. Görev Sistemi</h3>
+                        </div>
+                        <div class="rule-content">
+                            <p>Günlük görevler 🔄 – hər gün yenilənir</p>
+                            <p>Özəl görevler 🌟 – yalnız xüsusi tədbirlərdə açılır</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-header">
+                            <span class="rule-emoji">💵</span>
+                            <h3>5. Çıxarış Qaydaları</h3>
+                        </div>
+                        <div class="rule-content">
+                            <p>Çıxarış yalnız M10 pul kisəsi vasitəsilə mümkündür 🏦</p>
+                            <p>Minimum çıxarış: 3000 ADSCOİN (💰 3 AZN)</p>
+                            <p>Çıxarışlar 24 saat ərzində təsdiqlənir ⏳</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item warning">
+                        <div class="rule-header">
+                            <span class="rule-emoji">⚠️</span>
+                            <h3>Qeydlər:</h3>
+                        </div>
+                        <div class="rule-content">
+                            <p>Limitdən artıq reklam izləmək mümkün deyil 🚫</p>
+                            <p>Sistem qaydalarını pozan istifadəçilərin balansı sıfırlana bilər ❗</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Rules Content -->
+        <div class="rules-content" id="eventRulesContent" style="display: none;">
+            <div class="rules-card">
+                <div class="rules-header">
+                    <div class="rules-icon">🎉</div>
+                    <h2>Event Qaydaları</h2>
+                    <h3 class="event-title">🗓 BOTUN İLK HƏFTƏSİ</h3>
+                </div>
+
+                <div class="rules-section">
+                    <div class="rule-item event-rule">
+                        <div class="rule-content">
+                            <p>Bu çəkilişə qatılmaq üçün istifadəçi öz Telegram profil şəklini dəyişib bu linkdəki 📷 şəkil ilə eyni etməlidir:</p>
+                            <div class="profile-link">
+                                <a href="#" class="link-btn">🔗 Profil Şəkli Linki</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule-item event-rule">
+                        <div class="rule-content">
+                            <p>Çəkiliş 1 həftə davam edəcək ⏱</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item event-rule">
+                        <div class="rule-content">
+                            <p>Çəkiliş bitdikdən 5 gün ərzində hədiyyələr 🏆 balansınıza əlavə olunacaq</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item prize-info">
+                        <div class="rule-header">
+                            <span class="rule-emoji">🏆</span>
+                            <h3>Mükafat</h3>
+                        </div>
+                        <div class="rule-content">
+                            <div class="prize-amount">50 ADSCOİN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bubbles Animation -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="rules.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+/* Withdraw Page Specific Styles */
+
+.withdrawal-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 191, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.withdrawal-card h2 {
+    color: #00bfff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.balance-display-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 20, 147, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.balance-display-card h3 {
+    color: #ff1493;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.balance-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.balance-item {
+    text-align: center;
+    flex: 1;
+}
+
+.balance-label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.balance-value {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+.withdrawal-form-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 191, 255, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.withdrawal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    color: #00bfff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-select,
+.form-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 191, 255, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+
+.form-select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: #00bfff;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+.form-select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.amount-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.amount-input {
+    flex: 1;
+    padding-right: 100px;
+}
+
+.amount-unit {
+    position: absolute;
+    right: 15px;
+    color: #00bfff;
+    font-weight: bold;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.amount-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.amount-azn {
+    color: #32cd32;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.minimum-info {
+    color: #888;
+    font-size: 12px;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #ff1493, #00bfff);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 20, 147, 0.6);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.2);
+}
+
+.submit-btn.loading {
+    background: linear-gradient(45deg, #666, #888);
+    animation: pulse 1s infinite;
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+/* Withdrawal Message */
+.withdrawal-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: rgba(34, 197, 94, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    max-width: 90%;
+    text-align: center;
+}
+
+.withdrawal-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.withdrawal-message.error {
+    background: rgba(239, 68, 68, 0.9);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.message-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.message-text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Form Validation Styles */
+.form-input.error,
+.form-select.error {
+    border-color: #ff4444;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+}
+
+.form-input.success,
+.form-select.success {
+    border-color: #32cd32;
+    box-shadow: 0 0 20px rgba(50, 205, 50, 0.3);
+}
+
+.error-text {
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .withdrawal-form-card {
+        padding: 20px;
+    }
+    
+    .balance-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .balance-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+    }
+    
+    .balance-label {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    
+    .balance-value {
+        font-size: 18px;
+    }
+    
+    .form-input,
+    .form-select {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .amount-input {
+        padding-right: 90px;
+    }
+    
+    .amount-unit {
+        font-size: 12px;
+        right: 12px;
+    }
+    
+    .submit-btn {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .btn-icon {
+        font-size: 18px;
+    }
+    
+    .amount-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .withdrawal-message {
+        margin: 0 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .message-text {
+        font-size: 12px;
+    }
+}

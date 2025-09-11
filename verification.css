@@ -1,0 +1,244 @@
+/* Verification Page Specific Styles */
+
+.verification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 20px;
+}
+
+.verification-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 191, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.verification-header {
+    margin-bottom: 30px;
+}
+
+.verification-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.verification-header h2 {
+    color: #00bfff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+}
+
+.verification-header p {
+    color: #888;
+    font-size: 14px;
+}
+
+.code-display {
+    margin-bottom: 30px;
+}
+
+.code-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #00bfff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 
+        0 0 30px rgba(0, 191, 255, 0.3),
+        inset 0 0 20px rgba(0, 191, 255, 0.1);
+}
+
+.code-text {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    font-weight: bold;
+    color: #00bfff;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+    animation: codeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes codeGlow {
+    from {
+        text-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(0, 191, 255, 1), 0 0 40px rgba(0, 191, 255, 0.8);
+    }
+}
+
+.copy-btn {
+    background: linear-gradient(45deg, #32cd32, #66bb6a);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(50, 205, 50, 0.5);
+}
+
+.copy-btn:active {
+    transform: scale(0.98);
+}
+
+.verification-info {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 191, 255, 0.2);
+}
+
+.info-icon {
+    font-size: 18px;
+    color: #00bfff;
+}
+
+.info-text {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.refresh-btn,
+.back-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.refresh-btn {
+    background: linear-gradient(45deg, #ff1493, #00bfff);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+}
+
+.refresh-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.refresh-btn:active,
+.back-btn:active {
+    transform: scale(0.98);
+}
+
+/* Success Message */
+.success-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: rgba(34, 197, 94, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.success-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Loading states */
+.code-text.loading {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.refresh-btn.loading {
+    background: linear-gradient(45deg, #666, #888);
+    animation: pulse 1s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .verification-card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .verification-icon {
+        font-size: 40px;
+    }
+    
+    .verification-header h2 {
+        font-size: 20px;
+    }
+    
+    .code-text {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .refresh-btn,
+    .back-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .info-text {
+        font-size: 12px;
+    }
+}
