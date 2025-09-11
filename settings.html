@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Ayarlar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="slide-menu-header">
+            <div class="slide-menu-logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="slide-menu-content">
+            <div class="menu-item" data-page="index">
+                <i class="fas fa-coins"></i>
+                <span>QAZANC</span>
+            </div>
+            <div class="menu-item" data-page="friends">
+                <i class="fas fa-users"></i>
+                <span>DOSTLAR</span>
+            </div>
+            <div class="menu-item" data-page="rules">
+                <i class="fas fa-book"></i>
+                <span>QAYDALAR</span>
+            </div>
+            <div class="menu-item active" data-page="settings">
+                <i class="fas fa-cog"></i>
+                <span>AYARLAR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Settings Section -->
+        <div class="settings-section">
+            <div class="settings-card">
+                <h3>AYARLAR</h3>
+                
+                <!-- Language Selection -->
+                <div class="setting-item">
+                    <div class="setting-header">
+                        <i class="fas fa-language"></i>
+                        <h4>DİL</h4>
+                    </div>
+                    <div class="setting-content">
+                        <div class="language-options">
+                            <button class="language-btn active" data-lang="az">
+                                <span class="flag">🇦🇿</span>
+                                <span>AZƏRBAYCAN</span>
+                            </button>
+                            <button class="language-btn" data-lang="ru">
+                                <span class="flag">🇷🇺</span>
+                                <span>РУССКИЙ</span>
+                            </button>
+                            <button class="language-btn" data-lang="en">
+                                <span class="flag">🇺🇸</span>
+                                <span>ENGLISH</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Help and Support -->
+                <div class="setting-item">
+                    <div class="setting-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>YARDIM VƏ DƏSTƏK</h4>
+                    </div>
+                    <div class="setting-content">
+                        <button class="help-btn" id="helpBtn">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>YARDIM VƏ DƏSTƏK</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Referral Section -->
+                <div class="setting-item">
+                    <div class="setting-header">
+                        <i class="fas fa-users"></i>
+                        <h4>DOSTLAR</h4>
+                    </div>
+                    <div class="setting-content">
+                        <button class="referral-btn" id="referralBtn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>DOSTLAR</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- App Info -->
+                <div class="setting-item">
+                    <div class="setting-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h4>TƏFƏRRÜATLAR</h4>
+                    </div>
+                    <div class="setting-content">
+                        <div class="app-info">
+                            <div class="info-row">
+                                <span class="info-label">Versiya</span>
+                                <span class="info-value">1.0.0</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Tarix</span>
+                                <span class="info-value">2024</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Developer</span>
+                                <span class="info-value">ADSMANAT Team</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Background Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

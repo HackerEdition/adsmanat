@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Bilet-Coin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="slide-menu-header">
+            <div class="slide-menu-logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="slide-menu-content">
+            <div class="menu-item" data-page="index">
+                <i class="fas fa-coins"></i>
+                <span>QAZANC</span>
+            </div>
+            <div class="menu-item" data-page="friends">
+                <i class="fas fa-users"></i>
+                <span>DOSTLAR</span>
+            </div>
+            <div class="menu-item" data-page="rules">
+                <i class="fas fa-book"></i>
+                <span>QAYDALAR</span>
+            </div>
+            <div class="menu-item" data-page="settings">
+                <i class="fas fa-cog"></i>
+                <span>AYARLAR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Convert Section -->
+        <div class="convert-section">
+            <div class="convert-card">
+                <h3>BİLETLƏRİ ADSCOİN-Ə ÇEVİRİN</h3>
+                <div class="balance-display">
+                    <div class="balance-item">
+                        <span class="balance-label">BİLET</span>
+                        <span class="balance-value" id="biletBalance">0</span>
+                    </div>
+                    <div class="balance-item">
+                        <span class="balance-label">ADSCOİN</span>
+                        <span class="balance-value" id="adscoinBalance">0</span>
+                    </div>
+                    <div class="balance-item">
+                        <span class="balance-label">AZN</span>
+                        <span class="balance-value" id="aznBalance">0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wheel Section -->
+        <div class="wheel-section">
+            <div class="wheel-container">
+                <div class="wheel" id="wheel">
+                    <div class="wheel-center">
+                        <div class="wheel-pointer"></div>
+                    </div>
+                    <div class="wheel-segment" data-value="1">
+                        <span>1</span>
+                    </div>
+                    <div class="wheel-segment" data-value="2">
+                        <span>2</span>
+                    </div>
+                    <div class="wheel-segment" data-value="3">
+                        <span>3</span>
+                    </div>
+                    <div class="wheel-segment" data-value="4">
+                        <span>4</span>
+                    </div>
+                    <div class="wheel-segment" data-value="5">
+                        <span>5</span>
+                    </div>
+                    <div class="wheel-segment" data-value="0">
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="wheel-labels">
+                    <div class="wheel-label">1 ADSCOİN</div>
+                    <div class="wheel-label">2 ADSCOİN</div>
+                    <div class="wheel-label">3 ADSCOİN</div>
+                    <div class="wheel-label">4 ADSCOİN</div>
+                    <div class="wheel-label">5 ADSCOİN</div>
+                    <div class="wheel-label">0 ADSCOİN</div>
+                </div>
+            </div>
+            <button class="spin-btn" id="spinBtn">
+                <i class="fas fa-sync-alt"></i>
+                ÇEVİR
+            </button>
+        </div>
+
+        <!-- Result Message -->
+        <div class="result-message" id="resultMessage">
+            <i class="fas fa-trophy"></i>
+            <span id="resultText">Siz 0 ADSCOİN QAZANDINIZ!</span>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="tab" data-page="index">
+                <i class="fas fa-ticket-alt"></i>
+                <span>BİLET QAZAN</span>
+            </div>
+            <div class="tab active" data-page="biletcoin">
+                <i class="fas fa-exchange-alt"></i>
+                <span>BİLET-COİN</span>
+            </div>
+            <div class="tab" data-page="events">
+                <i class="fas fa-calendar-star"></i>
+                <span>HADİSƏLƏR</span>
+            </div>
+            <div class="tab" data-page="tasks">
+                <i class="fas fa-tasks"></i>
+                <span>GÖREVLƏR</span>
+            </div>
+            <div class="tab" data-page="withdraw">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>ÇIXARIŞ</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Background Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="biletcoin.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSMANAT - Çıxarış</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+                <div class="coin-icons">
+                    <span class="coin">🪙</span>
+                    <span class="coin">💰</span>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="slide-menu-header">
+            <div class="slide-menu-logo">
+                <div class="logo-icon">💎</div>
+                <span class="logo-text">ADSMANAT</span>
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="slide-menu-content">
+            <div class="menu-item" data-page="index">
+                <i class="fas fa-coins"></i>
+                <span>QAZANC</span>
+            </div>
+            <div class="menu-item" data-page="friends">
+                <i class="fas fa-users"></i>
+                <span>DOSTLAR</span>
+            </div>
+            <div class="menu-item" data-page="rules">
+                <i class="fas fa-book"></i>
+                <span>QAYDALAR</span>
+            </div>
+            <div class="menu-item" data-page="settings">
+                <i class="fas fa-cog"></i>
+                <span>AYARLAR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Withdraw Section -->
+        <div class="withdraw-section">
+            <div class="withdraw-card">
+                <h3>ÇIXARIŞ</h3>
+                
+                <form class="withdraw-form" id="withdrawForm">
+                    <!-- Platform Selection -->
+                    <div class="form-group">
+                        <label for="platform">Platforma Seç</label>
+                        <select id="platform" name="platform" required>
+                            <option value="">Platforma seçin</option>
+                            <option value="m10">M10</option>
+                        </select>
+                    </div>
+                    
+                    <!-- M10 Number -->
+                    <div class="form-group">
+                        <label for="m10Number">M10 NÖMRƏSİ</label>
+                        <input type="tel" id="m10Number" name="m10Number" placeholder="+994 (00) 0000000" required>
+                    </div>
+                    
+                    <!-- Amount -->
+                    <div class="form-group">
+                        <label for="amount">ÇIXARIŞ ETMƏK İSTƏDİYİNİZ MƏBLƏĞ</label>
+                        <div class="amount-input">
+                            <input type="number" id="amount" name="amount" min="3000" step="1" placeholder="3000" required>
+                            <span class="amount-label">ADSCOİN</span>
+                        </div>
+                        <div class="amount-info">
+                            <span>Minimum: 3000 ADSCOİN (3 AZN)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Balance Display -->
+                    <div class="balance-display">
+                        <div class="balance-item">
+                            <span class="balance-label">Mövcud Balans</span>
+                            <span class="balance-value" id="currentBalance">0 ADSCOİN</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">AZN Ekvivalenti</span>
+                            <span class="balance-value" id="aznEquivalent">0.00 AZN</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="withdraw-btn" id="withdrawBtn">
+                        <i class="fas fa-money-bill-wave"></i>
+                        ÇIXARIŞ ET
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <span>SİZİN ÇIXARIŞINIZ 24 SAAT ƏRZİNDƏ TƏSDİQLƏNƏCƏK</span>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorText">Xəta baş verdi</span>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="tab" data-page="index">
+                <i class="fas fa-ticket-alt"></i>
+                <span>BİLET QAZAN</span>
+            </div>
+            <div class="tab" data-page="biletcoin">
+                <i class="fas fa-exchange-alt"></i>
+                <span>BİLET-COİN</span>
+            </div>
+            <div class="tab" data-page="events">
+                <i class="fas fa-calendar-star"></i>
+                <span>HADİSƏLƏR</span>
+            </div>
+            <div class="tab" data-page="tasks">
+                <i class="fas fa-tasks"></i>
+                <span>GÖREVLƏR</span>
+            </div>
+            <div class="tab active" data-page="withdraw">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>ÇIXARIŞ</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Background Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="withdraw.js"></script>
+</body>
+</html>
