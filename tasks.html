@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="az">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADSMANAT - Görevlər</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#0f0f13; --panel:#12141a; --neon:#00c2ff; --neon-soft:#00c2ff22; --text:#e8f1ff; --muted:#9fb3c8; --success:#17d783; --danger:#ff4d4f; }
+        *{ box-sizing:border-box; }
+        html,body{ margin:0; height:100%; background:radial-gradient(60% 80% at 20% 10%, #1b1f2a 0%, #0f0f13 65%); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+        .container{ max-width:520px; margin:0 auto; padding:16px 14px 96px; position:relative; }
+        header{ position:sticky; top:0; z-index:20; backdrop-filter: blur(8px); background:#0f0f13cc; border-bottom:1px solid #1f2633; }
+        header .bar{ display:flex; align-items:center; justify-content:space-between; padding:12px 14px; }
+        .logo{ display:flex; align-items:center; gap:10px; font-weight:700; }
+        .logo .badge{ width:34px; height:34px; border-radius:10px; background:#ff2ca8; box-shadow:0 0 12px #ff2ca8; display:grid; place-items:center; font-weight:800; color:#fff; }
+        .menu-btn{ width:36px; height:36px; border-radius:10px; background:var(--panel); border:1px solid #1f2633; color:var(--text); display:grid; place-items:center; }
+        .panel{ background:var(--panel); border:1px solid #1f2633; border-radius:16px; padding:14px; box-shadow:0 0 0 2px var(--neon-soft) inset; margin:14px 0; }
+        .title{ text-align:center; font-weight:700; letter-spacing:.4px; }
+        .task{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 12px; border:1px solid #243045; border-radius:12px; margin-top:10px; background:#0f131b; }
+        .task .name{ font-weight:600; }
+        .task .actions{ display:flex; align-items:center; gap:10px; }
+        .btn{ padding:9px 14px; border-radius:10px; border:1px solid #2a3a52; color:var(--text); background:#131927; cursor:pointer; }
+        .btn-primary{ background: linear-gradient(135deg, #00c2ff 0%, #0077ff 100%); border:0; color:white; box-shadow:0 6px 18px #0080ff44; }
+        .btn-outline{ background:transparent; }
+        .code-entry{ margin-top:10px; border:1px dashed #2a3a52; border-radius:12px; padding:12px; display:none; }
+        .code-entry.active{ display:block; }
+        .code-row{ display:flex; gap:8px; }
+        .code-row input{ flex:1; padding:10px 12px; border-radius:10px; border:1px solid #2a3a52; background:#0e1420; color:var(--text); letter-spacing:1.2px; font-weight:600; }
+        .msg{ position:fixed; top:14px; left:50%; transform:translateX(-50%); background:#0f131b; color:var(--text); border:1px solid #2a3a52; padding:10px 14px; border-radius:10px; display:none; z-index:50; }
+        .msg.ok{ border-color:#1e8f6f; box-shadow:0 0 0 2px #17d78322 inset; }
+        .msg.err{ border-color:#8f1e33; box-shadow:0 0 0 2px #ff4d4f22 inset; }
+        footer.tabs{ position:sticky; bottom:0; z-index:20; background:#0f0f13cc; backdrop-filter: blur(8px); border-top:1px solid #1f2633; padding:10px 8px; display:grid; grid-template-columns: repeat(5, 1fr); gap:8px; }
+        .tab{ height:40px; border-radius:10px; border:1px solid #223047; background:#121827; display:grid; place-items:center; font-size:12px; color:#c9d9ef; }
+        .tab.active{ outline:2px solid var(--neon); color:white; }
+        a{ color:inherit; text-decoration:none; }
+    </style>
+</head>
+<body>
+    <div class="msg" id="toast"></div>
+    <header>
+        <div class="bar">
+            <div class="logo"><span class="badge">A</span> ADSMAnat</div>
+            <button class="menu-btn" aria-label="menu">≡</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="panel">
+            <div class="title">GÖREVLƏR</div>
+        </div>
+
+        <div class="panel">
+            <div class="title">ÖZƏL GÖREVLƏR</div>
+            <div class="task">
+                <div>
+                    <div class="name">YouTube ailəmizə qatıl (abunə ol)</div>
+                    <small class="muted">+5 ADSCOİN</small>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" data-task="yt" data-url="https://youtube.com/@adsmanat?si=p5erKFg_4Ds3SU2d">KEÇİD</button>
+                </div>
+            </div>
+            <div class="code-entry" id="entry-yt">
+                <div class="code-row">
+                    <input type="text" inputmode="latin" autocomplete="one-time-code" placeholder="Kodu daxil edin" maxlength="16" id="code-yt">
+                    <button class="btn" data-cancel="yt">Ləğv et</button>
+                    <button class="btn btn-primary" data-confirm="yt">Təsdiq et</button>
+                </div>
+                <small class="muted">Keçidə hər basdıqda yeni kod yaradılır.</small>
+            </div>
+
+            <div class="task">
+                <div>
+                    <div class="name">Rəsmi Telegram kanalına abunə ol</div>
+                    <small class="muted">+5 ADSCOİN</small>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" data-task="tg" data-url="https://t.me/adsmanatofficial">KEÇİD</button>
+                </div>
+            </div>
+            <div class="code-entry" id="entry-tg">
+                <div class="code-row">
+                    <input type="text" placeholder="Kodu daxil edin" maxlength="16" id="code-tg">
+                    <button class="btn" data-cancel="tg">Ləğv et</button>
+                    <button class="btn btn-primary" data-confirm="tg">Təsdiq et</button>
+                </div>
+            </div>
+
+            <div class="task">
+                <div>
+                    <div class="name">Rəsmi TikTok kanalımıza abunə ol</div>
+                    <small class="muted">+5 ADSCOİN</small>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" data-task="tt" data-url="https://www.tiktok.com/@adsmanat?is_from_webapp=1&sender_device=pc">KEÇİD</button>
+                </div>
+            </div>
+            <div class="code-entry" id="entry-tt">
+                <div class="code-row">
+                    <input type="text" placeholder="Kodu daxil edin" maxlength="16" id="code-tt">
+                    <button class="btn" data-cancel="tt">Ləğv et</button>
+                    <button class="btn btn-primary" data-confirm="tt">Təsdiq et</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="title">GÜNLÜK GÖREVLƏR</div>
+            <div class="task">
+                <div>
+                    <div class="name">Qısalmış linki keç №1</div>
+                    <small class="muted">+3 ADSCOİN</small>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" data-task="sl1" data-url="verification.html">KEÇİD</button>
+                </div>
+            </div>
+            <div class="code-entry" id="entry-sl1">
+                <div class="code-row">
+                    <input type="text" placeholder="Kodu daxil edin" maxlength="16" id="code-sl1">
+                    <button class="btn" data-cancel="sl1">Ləğv et</button>
+                    <button class="btn btn-primary" data-confirm="sl1">Təsdiq et</button>
+                </div>
+                <small class="muted">Short linkdən qayıtdıqdan sonra kodu daxil edin. Sessiya itmir.</small>
+            </div>
+
+            <div class="task">
+                <div>
+                    <div class="name">Qısalmış linki keç №2</div>
+                    <small class="muted">+3 ADSCOİN</small>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" data-task="sl2" data-url="verification.html">KEÇİD</button>
+                </div>
+            </div>
+            <div class="code-entry" id="entry-sl2">
+                <div class="code-row">
+                    <input type="text" placeholder="Kodu daxil edin" maxlength="16" id="code-sl2">
+                    <button class="btn" data-cancel="sl2">Ləğv et</button>
+                    <button class="btn btn-primary" data-confirm="sl2">Təsdiq et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="tabs">
+        <a class="tab" href="index.html">Bilet qazan</a>
+        <a class="tab" href="biletcoin.html">Bilet-Coin</a>
+        <a class="tab" href="events.html">Hadisələr</a>
+        <a class="tab active" href="tasks.html">Görevlər</a>
+        <a class="tab" href="withdraw.html">Çıxarış</a>
+    </footer>
+
+    <script>
+        const API_CREATE = 'api_create_code.php';
+        const API_VERIFY = 'api_verify_code.php';
+
+        function toast(msg, ok=true){
+            const el = document.getElementById('toast');
+            el.textContent = msg;
+            el.className = 'msg ' + (ok ? 'ok' : 'err');
+            el.style.display = 'block';
+            clearTimeout(el._t);
+            el._t = setTimeout(()=>{ el.style.display='none'; }, 3000);
+        }
+
+        function entry(task){
+            return document.getElementById('entry-' + task);
+        }
+
+        async function createCode(task){
+            try{
+                const res = await fetch(API_CREATE, { method:'POST', credentials:'include', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ task_key: task }) });
+                const data = await res.json();
+                if(!data.success){ throw new Error(data.error || 'Xəta'); }
+                sessionStorage.setItem('code_meta_' + task, JSON.stringify(data));
+                return data;
+            }catch(e){ toast(e.message || 'Xəta', false); throw e; }
+        }
+
+        async function openTask(ev){
+            const btn = ev.currentTarget;
+            const task = btn.dataset.task;
+            const url = btn.dataset.url;
+            const meta = await createCode(task);
+            const e = entry(task);
+            e.classList.add('active');
+            const input = e.querySelector('input');
+            input.value = '';
+            input.placeholder = 'Kod: ' + meta.code;
+            localStorage.setItem('entry_open_' + task, '1');
+            // Open the verification flow. You can append code_id if your shortener supports callbacks.
+            const target = new URL(url, location.href);
+            target.searchParams.set('task', task);
+            target.searchParams.set('code', meta.code);
+            target.searchParams.set('code_id', meta.code_id);
+            window.open(target.toString(), '_blank');
+        }
+
+        async function confirmTask(task){
+            const e = entry(task);
+            const code = e.querySelector('input').value.trim();
+            try{
+                const res = await fetch(API_VERIFY, { method:'POST', credentials:'include', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ task_key: task, code }) });
+                const data = await res.json();
+                if(!data.success){ throw new Error(data.error || 'Xəta'); }
+                toast('Təsdiqləndi ✓', true);
+                e.classList.remove('active');
+                e.querySelector('input').value = '';
+            }catch(e){ toast(e.message || 'Yanlış kod', false); }
+        }
+
+        function cancelTask(task){
+            const e = entry(task);
+            e.classList.remove('active');
+            e.querySelector('input').value = '';
+            localStorage.removeItem('entry_open_' + task);
+        }
+
+        document.querySelectorAll('[data-task]').forEach(btn=>{
+            btn.addEventListener('click', openTask);
+        });
+        document.querySelectorAll('[data-cancel]').forEach(btn=>{
+            btn.addEventListener('click', ()=> cancelTask(btn.dataset.cancel));
+        });
+        document.querySelectorAll('[data-confirm]').forEach(btn=>{
+            btn.addEventListener('click', ()=> confirmTask(btn.dataset.confirm));
+        });
+
+        // Restore open entries and placeholders after reload or returning from short link
+        ['yt','tg','tt','sl1','sl2'].forEach(task => {
+            if(localStorage.getItem('entry_open_' + task)){
+                const e = entry(task);
+                e.classList.add('active');
+                const metaRaw = sessionStorage.getItem('code_meta_' + task);
+                if(metaRaw){
+                    try{ const meta = JSON.parse(metaRaw); e.querySelector('input').placeholder = 'Kod: ' + (meta.code || ''); }catch{}
+                }
+            }
+        });
+
+        // Auto-open from hash
+        const h = location.hash.replace('#','');
+        if(h && ['yt','tg','tt','sl1','sl2'].includes(h)){
+            const e = entry(h);
+            if(e){ e.classList.add('active'); localStorage.setItem('entry_open_' + h, '1'); }
+        }
+    </script>
+</body>
+</html>
+
